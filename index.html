@@ -19,8 +19,12 @@
   <meta name="twitter:title" content="42, rue du Bac, Paris 7ᵉ. Duplex de 109 m²">
   <meta name="twitter:description" content="Aux deux derniers étages, vues dégagées sur le musée d'Orsay et les toits de Paris. 2 000 000 €.">
   <meta name="twitter:image" content="https://louchaumeau-maker.github.io/42-rue-du-bac/assets/img/og.jpg">
+  <meta name="twitter:image:alt" content="Vue sur le pavillon du musée d'Orsay depuis le duplex du 42 rue du Bac">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
   <meta name="theme-color" content="#191820">
+  <link rel="canonical" href="https://louchaumeau-maker.github.io/42-rue-du-bac/">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="preload" href="assets/fonts/CormorantGaramond-400.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/Manrope-400.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" as="image" type="image/webp" imagesrcset="assets/img/orsay-1200.webp 1200w, assets/img/orsay-2400.webp 2400w" imagesizes="100vw" fetchpriority="high">
@@ -36,19 +40,52 @@
     "description": "Duplex traversant de 109,29 m² au sol aux deux derniers étages d'un immeuble ancien de 1830 avec ascenseur et gardien. Vues dégagées sur le musée d'Orsay.",
     "url": "https://louchaumeau-maker.github.io/42-rue-du-bac/",
     "image": "https://louchaumeau-maker.github.io/42-rue-du-bac/assets/img/og.jpg",
-    "numberOfRooms": 5,
-    "floorSize": { "@type": "QuantitativeValue", "value": 101.52, "unitCode": "MTK" },
+    "datePosted": "2026-07-16",
+    "inLanguage": "fr",
+    "about": {
+      "@type": "Apartment",
+      "name": "Duplex 5 pièces aux 5e et 6e étages, 42 rue du Bac, Paris 7e",
+      "description": "Duplex traversant de 109,29 m² au sol (101,52 m² loi Carrez) aux 5e et 6e étages d'un immeuble de 1830 en pierre de taille, avec ascenseur et gardien. Vues dégagées sur le musée d'Orsay. À rénover.",
+      "numberOfRooms": 5,
+      "numberOfBedrooms": 3,
+      "numberOfBathroomsTotal": 2,
+      "floorLevel": "5 et 6",
+      "yearBuilt": 1830,
+      "floorSize": {
+        "@type": "QuantitativeValue",
+        "value": 101.52,
+        "unitCode": "MTK",
+        "name": "Surface privative loi Carrez"
+      },
+      "amenityFeature": [
+        { "@type": "LocationFeatureSpecification", "name": "Ascenseur", "value": true },
+        { "@type": "LocationFeatureSpecification", "name": "Gardien", "value": true },
+        { "@type": "LocationFeatureSpecification", "name": "Caves", "value": true },
+        { "@type": "LocationFeatureSpecification", "name": "Fibre optique", "value": true }
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "42 rue du Bac",
+        "postalCode": "75007",
+        "addressLocality": "Paris",
+        "addressCountry": "FR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 48.8568,
+        "longitude": 2.3269
+      },
+      "image": "https://louchaumeau-maker.github.io/42-rue-du-bac/assets/img/og.jpg"
+    },
     "offers": {
       "@type": "Offer",
       "price": "2000000",
-      "priceCurrency": "EUR"
-    },
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "42 rue du Bac",
-      "postalCode": "75007",
-      "addressLocality": "Paris",
-      "addressCountry": "FR"
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock",
+      "seller": {
+        "@type": "Organization",
+        "name": "SAS YP"
+      }
     }
   }
   </script>
@@ -562,10 +599,10 @@
             <form class="lead" id="leadForm" novalidate>
               <p class="lead__eyebrow">Ou recevoir le dossier complet</p>
               <div class="lead__row">
-                <input type="text" name="nom" placeholder="Nom" autocomplete="name" required>
-                <input type="email" name="email" placeholder="Email" autocomplete="email" required>
+                <input type="text" name="nom" placeholder="Nom" aria-label="Nom" autocomplete="name" required>
+                <input type="email" name="email" placeholder="Email" aria-label="Email" autocomplete="email" required>
               </div>
-              <input type="tel" name="tel" placeholder="Téléphone (optionnel)" autocomplete="tel">
+              <input type="tel" name="tel" placeholder="Téléphone (optionnel)" aria-label="Téléphone (optionnel)" autocomplete="tel">
               <button type="submit" class="btn btn--dark-ghost">Recevoir le dossier</button>
               <p class="lead__reassure">30 secondes · sans engagement · réponse sous 24 h · vos données ne sont jamais revendues.</p>
               <p class="lead__sent" id="leadSent" aria-live="polite">Merci, votre message s'ouvre dans votre messagerie.</p>

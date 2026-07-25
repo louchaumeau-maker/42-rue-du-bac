@@ -341,8 +341,15 @@
       }
     };
 
-    // Réseau contraint (économie de données / 2G) : pas de préchargement anticipé des 44 Mo —
-    // les frames ne se chargent qu'à l'approche réelle de la balade.
+    // ATTENTION — ce garde-fou est INOPÉRANT en l'état (mesuré le 2026-07-25, audit Écrin).
+    // Il n'annule que le préchargement anticipé ; mais la balade est la 2e section de la page
+    // (haut du bloc à ~1 018 px sur 1 440×900, ~955 px sur 390×844), donc l'IntersectionObserver
+    // ci-dessous — rootMargin 150 % — la voit DÈS LE CHARGEMENT et lance wStartLoading() quand
+    // même : 377 frames / 44,6 Mo partent sans que l'utilisateur ait scrollé, y compris en
+    // économie de données. De plus navigator.connection n'existe pas sur Safari/iOS, où
+    // dataSaver vaut donc toujours false. Ne pas se fier à ce bloc comme à une protection.
+    // Options chiffrées pour vraiment réduire les 44,6 Mo :
+    // ~/Ecrin/etudes/AUTONOME-2026-07-25-AUDIT-42.md (§ décision qui attend Louison).
     const conn = navigator.connection;
     const dataSaver = !!(conn && (conn.saveData || /(^|-)2g/.test(conn.effectiveType || "")));
     if (!dataSaver) {
