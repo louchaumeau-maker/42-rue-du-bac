@@ -77,16 +77,21 @@
     else video.pause();
   }, { threshold: [0, 0.5] }).observe($(".opener__sticky"));
 
-  // Légendes synchronisées : [t, eyebrow, nom]
+  // Légendes synchronisées sur la table de montage d'Ouverture42 (30,1 s) :
+  // descente 0→14,4 s, cour, séjour, pièce vue, 6e, toits. [t, eyebrow, nom]
   const CAPS = [
     [0.0, "Depuis l'orbite", "La Terre"],
-    [3.0, "Europe de l'Ouest", "La France"],
-    [6.2, "Île-de-France", "Paris"],
+    [2.6, "Europe de l'Ouest", "La France"],
+    [5.6, "Île-de-France", "Paris"],
     [9.0, "Rive gauche", "Le 7ᵉ arrondissement"],
-    [11.4, "Saint-Thomas d'Aquin", "Rue du Bac"],
-    [14.8, "", ""],
-    [16.0, "Paris VII", "L'appartement"],
-    [19.5, "", ""]
+    [11.6, "Saint-Thomas d'Aquin", "Rue du Bac"],
+    [14.0, "", ""],
+    [14.9, "L'immeuble", "La cour pavée"],
+    [17.9, "5ᵉ étage", "Le séjour"],
+    [20.9, "5ᵉ étage", "Fenêtre sur les toits"],
+    [23.9, "6ᵉ étage", "Sous les toits"],
+    [26.9, "La vue", "Les toits de Paris"],
+    [29.2, "", ""]
   ];
   let capIdx = -1;
   video.addEventListener("timeupdate", () => {
