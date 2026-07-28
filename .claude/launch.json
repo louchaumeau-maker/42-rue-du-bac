@@ -3,9 +3,10 @@
   "configurations": [
     {
       "name": "42-rue-du-bac",
-      "runtimeExecutable": "python3",
-      "runtimeArgs": ["-m", "http.server", "4242"],
-      "port": 4242
+      "runtimeExecutable": "sh",
+      "runtimeArgs": ["-c", "python3 -m http.server ${PORT:-4242}"],
+      "port": 4242,
+      "autoPort": true
     }
   ]
 }
