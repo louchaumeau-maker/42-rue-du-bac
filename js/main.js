@@ -33,8 +33,9 @@
   /* ---------- CTA collant : visible après le hero, caché au contact ---------- */
 
   const stickyCta = $("#stickyCta");
-  let heroGone = false, contactSeen = false;
-  const syncCta = () => stickyCta.classList.toggle("is-on", heroGone && !contactSeen);
+  let heroGone = false, contactSeen = false, openerOn = false;
+  const syncCta = () =>
+    stickyCta.classList.toggle("is-on", heroGone && !contactSeen && !openerOn);
   new IntersectionObserver(([e]) => { heroGone = !e.isIntersecting; syncCta(); })
     .observe($("#hero"));
   new IntersectionObserver(([e]) => { contactSeen = e.isIntersecting; syncCta(); }, { threshold: 0.15 })
@@ -71,10 +72,13 @@
   }, { passive: true });
   driveOpener();
 
-  // Lecture/pause selon la visibilité (recette iOS : muted + playsinline + catch)
+  // Lecture/pause selon la visibilité (recette iOS : muted + playsinline + catch).
+  // Pendant l'immersion vidéo, le CTA collant s'efface.
   new IntersectionObserver(([e]) => {
-    if (e.intersectionRatio >= 0.5) video.play().catch(() => {});
+    openerOn = e.intersectionRatio >= 0.5;
+    if (openerOn) video.play().catch(() => {});
     else video.pause();
+    syncCta();
   }, { threshold: [0, 0.5] }).observe($(".opener__sticky"));
 
   // Légendes synchronisées sur la table de montage d'Ouverture42 (30,1 s) :
