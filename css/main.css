@@ -113,6 +113,9 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 500; color: var(--ink); }
   .nav__links { display: none; }
   .nav__cta { margin-left: auto; }
 }
+@media (max-width: 560px) {
+  .nav__cta { display: none; } /* le CTA collant prend le relais après le hero */
+}
 
 /* ---------- Sticky CTA ---------- */
 
