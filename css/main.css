@@ -12,7 +12,7 @@
   --paper-2: #f2eee7;
   --ink: #211f26;
   --ink-soft: #4d4a52;
-  --muted: #857f74;
+  --muted: #6e6659; /* ≥ 4,5:1 sur --paper et --paper-2 (AA sur les petits textes) */
   --line: rgba(33, 31, 38, 0.14);
   --accent: #8f6b2f;
   --accent-bright: #c9a96a;
