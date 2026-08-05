@@ -228,7 +228,8 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 500; color: var(--ink); }
 }
 .opener__skip:hover { color: #d8bc85; border-color: #d8bc85; }
 @media (max-width: 700px) {
-  .opener__skip { padding: 0.9em 1.3em; } /* cible tactile ≥ 44 px */
+  /* Cibles tactiles ≥ 44 px : le doigt n'a pas la précision du curseur. */
+  .opener__skip { padding: 1.15em 1.4em; }
 }
 /* Visible seulement si le navigateur a refusé la lecture automatique. */
 .opener__play {
@@ -365,6 +366,9 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 500; color: var(--ink); }
 .plan__toggle button {
   font-size: 0.64rem; letter-spacing: 0.16em; text-transform: uppercase;
   padding: 0.5em 1em; color: var(--muted); transition: color 0.25s, background 0.25s;
+}
+@media (max-width: 700px) {
+  .plan__toggle button { padding: 0.95em 1.1em; } /* cible tactile ≥ 44 px */
 }
 .plan__toggle button.is-on { background: var(--accent-wash); color: var(--accent); }
 .plan img { width: 100%; height: auto; }
