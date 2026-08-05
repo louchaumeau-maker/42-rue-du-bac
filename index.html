@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>42, rue du Bac, Paris 7ᵉ. Deux appartements réunissables face au musée d'Orsay</title>
+  <title>42, rue du Bac, Paris 7ᵉ — deux appartements réunissables</title>
   <meta name="description" content="Deux appartements réunissables aux deux derniers étages d'un immeuble de 1830 — 64 m² au 5ᵉ, 37 m² au 6ᵉ, 109,29 m² au sol au total. Quartier Saint-Thomas d'Aquin, vues dégagées sur le musée d'Orsay. 1 995 000 €.">
   <meta property="og:title" content="42, rue du Bac, Paris 7ᵉ. Deux appartements réunissables">
   <meta property="og:description" content="Aux deux derniers étages, vues dégagées sur le musée d'Orsay et les toits de Paris. 1 995 000 €.">
@@ -27,9 +27,9 @@
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="preload" href="assets/fonts/CormorantGaramond-400.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/Manrope-400.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" as="image" type="image/webp" imagesrcset="assets/img/orsay-1200.webp 1200w, assets/img/orsay-2400.webp 2400w" imagesizes="100vw" fetchpriority="high">
+  <link rel="preload" as="image" type="image/webp" imagesrcset="assets/img/orsay-1200.webp 1200w, assets/img/orsay-1600.webp 1600w, assets/img/orsay-2400.webp 2400w" imagesizes="100vw" fetchpriority="high">
   <link rel="stylesheet" href="assets/fonts/fonts.css?v=17">
-  <link rel="stylesheet" href="css/main.css?v=27">
+  <link rel="stylesheet" href="css/main.css?v=28">
   <noscript><style>.reveal{opacity:1;transform:none}.hero__content>*{opacity:1;transform:none}.opener__frame{transform:none;border-radius:0}</style></noscript>
   <script type="application/ld+json">
   {
@@ -117,7 +117,7 @@
     <section class="hero" id="hero">
       <picture class="hero__media">
         <img src="assets/img/orsay-2400.webp" width="2400" height="1600"
-             srcset="assets/img/orsay-1200.webp 1200w, assets/img/orsay-2400.webp 2400w" sizes="100vw"
+             srcset="assets/img/orsay-1200.webp 1200w, assets/img/orsay-1600.webp 1600w, assets/img/orsay-2400.webp 2400w" sizes="100vw"
              alt="Vue depuis l'appartement sur les toits et le pavillon du musée d'Orsay au soleil couchant"
              fetchpriority="high" decoding="async">
       </picture>
@@ -146,6 +146,7 @@
             <p class="opener__caption-name" id="capName"></p>
           </div>
           <button class="opener__skip" id="openerSkip" type="button">Passer<span aria-hidden="true">&nbsp;→</span></button>
+          <button class="opener__play" id="openerPlay" type="button"><span aria-hidden="true"></span>Lancer le film</button>
           <div class="opener__bar" id="openerBar" aria-hidden="true"><span></span></div>
         </div>
       </div>
@@ -370,6 +371,6 @@
     <p class="lightbox__count" id="lbCount"></p>
   </div>
 
-  <script src="js/main.js?v=27" defer></script>
+  <script src="js/main.js?v=28" defer></script>
 </body>
 </html>

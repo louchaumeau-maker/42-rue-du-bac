@@ -70,7 +70,12 @@
     frame.style.setProperty("--op-r", `${Math.round(22 * (1 - e))}px`);
     // Préchargement de la vidéo au premier geste de scroll seulement :
     // un visiteur qui rebondit sur le hero ne télécharge pas le film.
-    if (window.scrollY > 0 && r.top < vh * 1.6 && video.preload === "none") { video.preload = "auto"; video.load(); }
+    const conn = navigator.connection;
+    const frugal = conn && (conn.saveData || /2g|3g/.test(conn.effectiveType || ""));
+    if (window.scrollY > 0 && r.top < vh * 1.6 && video.preload === "none" && !frugal) {
+      video.preload = "auto";
+      video.load();
+    }
   };
   window.addEventListener("scroll", () => {
     if (!ticking) { ticking = true; requestAnimationFrame(driveOpener); }
@@ -79,12 +84,23 @@
 
   // Lecture/pause selon la visibilité (recette iOS : muted + playsinline + catch).
   // Pendant l'immersion vidéo, le CTA collant s'efface.
+  // Si le navigateur refuse l'autoplay, on le dit : sinon le visiteur reste
+  // devant une image fixe sans comprendre qu'il manque le film.
   new IntersectionObserver(([e]) => {
     openerOn = e.intersectionRatio >= 0.5;
-    if (openerOn) video.play().catch(() => {});
-    else video.pause();
+    if (openerOn) {
+      video.play()
+        .then(() => frame.classList.remove("is-blocked"))
+        .catch(() => frame.classList.add("is-blocked"));
+    } else {
+      video.pause();
+    }
     syncCta();
   }, { threshold: [0, 0.5] }).observe($(".opener__sticky"));
+
+  $("#openerPlay").addEventListener("click", () => {
+    video.play().then(() => frame.classList.remove("is-blocked")).catch(() => {});
+  });
 
   // Légendes synchronisées sur la table de montage d'Ouverture42 (30,1 s) :
   // descente 0→14,4 s, cour, séjour, pièce vue, 6e, toits. [t, eyebrow, nom]
@@ -224,11 +240,12 @@
   const visitePlay = $("#visitePlay");
   if (visiteVideo && visitePlay) {
     const frame = visiteVideo.closest(".visite__frame");
+    /* Le bouton disparaît dès la première lecture : le remettre en pause le
+       ferait réapparaître par-dessus les contrôles natifs, qui restent visibles. */
     visitePlay.addEventListener("click", () => {
       visiteVideo.play();
       frame.classList.add("is-playing");
     });
-    visiteVideo.addEventListener("ended", () => frame.classList.remove("is-playing"));
   }
 
   /* ---------- [7] Formulaire → table leads (Supabase, insert-only) ---------- */
@@ -267,8 +284,7 @@
         body: JSON.stringify({
           nom, email,
           tel: tel || null,
-          source: "site-42-rue-du-bac",
-          user_agent: navigator.userAgent.slice(0, 500)
+          source: "site-42-rue-du-bac"
         })
       });
       if (!res.ok) throw new Error(String(res.status));
