@@ -29,7 +29,7 @@
   <link rel="preload" href="assets/fonts/Manrope-400.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" as="image" type="image/webp" imagesrcset="assets/img/orsay-1200.webp 1200w, assets/img/orsay-1600.webp 1600w, assets/img/orsay-2400.webp 2400w" imagesizes="100vw" fetchpriority="high">
   <link rel="stylesheet" href="assets/fonts/fonts.css?v=17">
-  <link rel="stylesheet" href="css/main.css?v=28">
+  <link rel="stylesheet" href="css/main.css?v=29">
   <noscript><style>.reveal{opacity:1;transform:none}.hero__content>*{opacity:1;transform:none}.opener__frame{transform:none;border-radius:0}</style></noscript>
   <script type="application/ld+json">
   {
@@ -138,9 +138,9 @@
     <section class="opener" id="ouverture" aria-label="Film d'ouverture : de la Terre à l'appartement">
       <div class="opener__sticky">
         <div class="opener__frame" id="openerFrame">
-          <video id="openerVideo" src="assets/video/ouverture.mp4" poster="assets/video/ouverture-poster.jpg"
+          <video id="openerVideo" src="assets/video/ouverture.mp4?v=3" poster="assets/video/ouverture-poster.jpg?v=3"
                  muted playsinline preload="none"
-                 aria-label="Descente continue sur imagerie satellite réelle, de la Terre jusqu'aux toits du 42 rue du Bac, puis visite de l'appartement en photographies animées"></video>
+                 aria-label="Descente continue sur imagerie satellite réelle, de la Terre jusqu'à la cour pavée du 42 rue du Bac"></video>
           <div class="opener__caption" id="openerCaption" aria-hidden="true">
             <p class="opener__caption-eyebrow" id="capEyebrow"></p>
             <p class="opener__caption-name" id="capName"></p>
@@ -157,18 +157,18 @@
       <div class="wrap">
         <header class="section-head reveal">
           <h2>La visite</h2>
-          <p>Le 5ᵉ puis le 6ᵉ en un plan continu, monté à partir des photographies du bien. Aucun décor ajouté.</p>
+          <p>Un vol continu du séjour du 5ᵉ jusqu'à la chambre mansardée du 6ᵉ, tourné depuis les photographies du bien. Aucune pièce inventée.</p>
         </header>
       </div>
       <div class="wrap">
         <div class="visite__frame reveal">
-          <video id="visiteVideo" poster="assets/img/visite-poster.webp"
+          <video id="visiteVideo" poster="assets/img/visite-poster.webp?v=3"
                  muted playsinline preload="none" controls
                  aria-label="Visite de l'appartement : séjour, cuisine, chambre et bureau au 5ᵉ étage, puis séjour, coin cuisine et chambre mansardée au 6ᵉ, en photographies animées">
-            <source src="assets/video/visite.mp4" type="video/mp4">
+            <source src="assets/video/visite.mp4?v=3" type="video/mp4">
           </video>
           <button class="visite__play" id="visitePlay" type="button" aria-label="Lancer la visite">
-            <span aria-hidden="true"></span>Lancer la visite · 27 s
+            <span aria-hidden="true"></span>Lancer la visite · 28 s
           </button>
         </div>
       </div>
@@ -371,6 +371,6 @@
     <p class="lightbox__count" id="lbCount"></p>
   </div>
 
-  <script src="js/main.js?v=28" defer></script>
+  <script src="js/main.js?v=29" defer></script>
 </body>
 </html>

@@ -199,8 +199,8 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 500; color: var(--ink); }
 
 /* ---------- [2] Opener vidéo ---------- */
 
-/* Course de scroll calée sur la durée de la vidéo (22,6 s). */
-.opener { position: relative; height: 195vh; background: #05070a; }
+/* Course de scroll calée sur la durée de la vidéo (14,4 s). */
+.opener { position: relative; height: 150vh; background: #05070a; }
 .opener__sticky { position: sticky; top: 0; height: 100vh; height: 100svh; overflow: hidden; display: grid; place-items: center; }
 .opener__frame {
   position: relative; width: 100%; height: 100%; overflow: hidden;

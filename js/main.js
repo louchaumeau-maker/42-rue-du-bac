@@ -102,21 +102,17 @@
     video.play().then(() => frame.classList.remove("is-blocked")).catch(() => {});
   });
 
-  // Légendes synchronisées sur la table de montage d'Ouverture42 (30,1 s) :
-  // descente 0→14,4 s, cour, séjour, pièce vue, 6e, toits. [t, eyebrow, nom]
+  // L'arrivée : descente satellite (0→8,8 s) puis atterrissage dans la cour
+  // pavée. Les intérieurs sont le sujet de la visite, plus de l'ouverture.
+  // [t, eyebrow, nom]
   const CAPS = [
     [0.0, "Depuis l'orbite", "La Terre"],
-    [1.95, "Europe de l'Ouest", "La France"],
-    [4.21, "Île-de-France", "Paris"],
-    [6.77, "Rive gauche", "Le 7ᵉ arrondissement"],
-    [8.72, "Saint-Thomas d'Aquin", "Rue du Bac"],
-    [10.53, "", ""],
-    [11.2, "L'immeuble", "La cour pavée"],
-    [13.46, "5ᵉ étage", "Le séjour"],
-    [15.71, "5ᵉ étage", "Fenêtre sur les toits"],
-    [17.97, "6ᵉ étage", "Sous les toits"],
-    [20.23, "La vue", "Les toits de Paris"],
-    [21.95, "", ""]
+    [1.65, "Europe de l'Ouest", "La France"],
+    [3.54, "Île-de-France", "Paris"],
+    [5.70, "Rive gauche", "Le 7ᵉ arrondissement"],
+    [7.34, "Saint-Thomas d'Aquin", "Rue du Bac"],
+    [9.5, "L'immeuble", "La cour pavée"],
+    [13.6, "", ""]
   ];
   let capIdx = -1;
   video.addEventListener("timeupdate", () => {
