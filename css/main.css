@@ -279,7 +279,7 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 500; color: var(--ink); }
 .projections { padding: clamp(4rem, 10vh, 7rem) 0; background: var(--paper-2); }
 
 .compare { position: relative; overflow: hidden; user-select: none; touch-action: pan-y; }
-.compare img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; }
+.compare img { width: 100%; aspect-ratio: 7 / 4; object-fit: cover; }
 .compare__before-wrap {
   position: absolute; inset: 0;
   clip-path: inset(0 calc(100% - var(--cut, 50%)) 0 0);

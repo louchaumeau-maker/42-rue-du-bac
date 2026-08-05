@@ -4,7 +4,7 @@
     {
       "name": "42-rue-du-bac",
       "runtimeExecutable": "sh",
-      "runtimeArgs": ["-c", "python3 -m http.server ${PORT:-4242}"],
+      "runtimeArgs": ["-c", "npx -y http-server -p ${PORT:-4242} --silent"],
       "port": 4242,
       "autoPort": true
     }
