@@ -137,6 +137,11 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 500; color: var(--ink); }
 .sticky-cta__price { font-family: var(--serif); font-size: 1.25rem; color: var(--ink); line-height: 1.2; }
 .sticky-cta__price span { display: block; font-family: var(--sans); font-size: 0.62rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); }
 .sticky-cta__btn { padding: 0.8rem 1.6rem; white-space: nowrap; }
+@media (max-width: 480px) {
+  .sticky-cta__price { font-size: 1.05rem; white-space: nowrap; }
+  .sticky-cta__price span { display: none; } /* sur petit écran, le prix suffit */
+  .sticky-cta__btn { padding: 0.7rem 1.1rem; }
+}
 
 /* ---------- [1] Hero ---------- */
 
