@@ -235,10 +235,11 @@
   planAvant.addEventListener("click", () => setPlan(false));
   planApres.addEventListener("click", () => setPlan(true));
 
-  /* ---------- [6] Formulaire → table leads (Supabase, insert-only) ---------- */
+  /* ---------- [6] Formulaire → fonction lead-42bac ----------
+     La fonction archive la demande PUIS notifie Louison par email.
+     Écrire dans la table depuis le navigateur n'alertait personne. */
 
-  const LEADS_URL = "https://ialrthwythkfnjgmtqjo.supabase.co/rest/v1/leads_42bac";
-  const LEADS_KEY = "sb_publishable_q-1fcmuWWNntnFgOFQkIbw_TaPXi4vg";
+  const LEADS_URL = "https://ialrthwythkfnjgmtqjo.supabase.co/functions/v1/lead-42bac";
 
   const form = $("#leadForm");
   const sent = $("#leadSent");
@@ -250,7 +251,7 @@
     const email = String(data.get("email") || "").trim();
     const tel = String(data.get("tel") || "").trim();
     if (data.get("societe")) { // pot de miel : on fait semblant
-      sent.textContent = "Merci, votre demande est enregistrée.";
+      sent.textContent = "Merci, votre demande nous est parvenue.";
       return;
     }
     if (!nom || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
@@ -262,21 +263,12 @@
     try {
       const res = await fetch(LEADS_URL, {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "apikey": LEADS_KEY,
-          "Authorization": `Bearer ${LEADS_KEY}`,
-          "Prefer": "return=minimal"
-        },
-        body: JSON.stringify({
-          nom, email,
-          tel: tel || null,
-          source: "site-42-rue-du-bac"
-        })
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ nom, email, tel })
       });
       if (!res.ok) throw new Error(String(res.status));
       form.reset();
-      sent.textContent = "Merci — vous recevrez le dossier sous 24 h.";
+      sent.textContent = "Merci — nous vous rappelons sous 24 h.";
     } catch {
       sent.textContent = "L'envoi a échoué — appelez le +33 6 12 07 68 83, réponse immédiate.";
     } finally {
