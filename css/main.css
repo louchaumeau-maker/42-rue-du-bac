@@ -211,6 +211,9 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 500; color: var(--ink); }
   transition: color 0.25s, border-color 0.25s;
 }
 .opener__skip:hover { color: #d8bc85; border-color: #d8bc85; }
+@media (max-width: 700px) {
+  .opener__skip { padding: 0.9em 1.3em; } /* cible tactile ≥ 44 px */
+}
 .opener__bar { position: absolute; left: 0; right: 0; bottom: 0; height: 2px; background: rgba(244, 242, 237, 0.12); }
 .opener__bar span { display: block; height: 100%; width: 0; background: #d8bc85; }
 
