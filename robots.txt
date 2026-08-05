@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://louchaumeau-maker.github.io/42-rue-du-bac/sitemap.xml

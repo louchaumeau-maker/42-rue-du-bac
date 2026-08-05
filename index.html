@@ -19,15 +19,18 @@
   <meta name="twitter:title" content="42, rue du Bac, Paris 7ᵉ. Duplex de 109 m²">
   <meta name="twitter:description" content="Aux deux derniers étages, vues dégagées sur le musée d'Orsay et les toits de Paris. 2 000 000 €.">
   <meta name="twitter:image" content="https://louchaumeau-maker.github.io/42-rue-du-bac/assets/img/og.jpg">
+  <meta name="twitter:image:alt" content="Vue sur le pavillon du musée d'Orsay depuis le duplex du 42 rue du Bac">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
   <meta name="theme-color" content="#191820">
+  <link rel="canonical" href="https://louchaumeau-maker.github.io/42-rue-du-bac/">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="preload" href="assets/fonts/CormorantGaramond-400.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/Manrope-400.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" as="image" type="image/webp" imagesrcset="assets/img/orsay-1200.webp 1200w, assets/img/orsay-2400.webp 2400w" imagesizes="100vw" fetchpriority="high">
   <link rel="stylesheet" href="assets/fonts/fonts.css?v=17">
-  <link rel="stylesheet" href="assets/vendor/leaflet.css">
-  <link rel="stylesheet" href="css/main.css?v=19">
-  <noscript><style>.reveal{opacity:1;transform:none}.loader{display:none}.hero__content>*{opacity:1;transform:none}</style></noscript>
+  <link rel="stylesheet" href="css/main.css?v=20">
+  <noscript><style>.reveal{opacity:1;transform:none}.hero__content>*{opacity:1;transform:none}.opener__frame{transform:none;border-radius:0}</style></noscript>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -36,64 +39,70 @@
     "description": "Duplex traversant de 109,29 m² au sol aux deux derniers étages d'un immeuble ancien de 1830 avec ascenseur et gardien. Vues dégagées sur le musée d'Orsay.",
     "url": "https://louchaumeau-maker.github.io/42-rue-du-bac/",
     "image": "https://louchaumeau-maker.github.io/42-rue-du-bac/assets/img/og.jpg",
-    "numberOfRooms": 5,
-    "floorSize": { "@type": "QuantitativeValue", "value": 101.52, "unitCode": "MTK" },
+    "datePosted": "2026-07-16",
+    "inLanguage": "fr",
+    "about": {
+      "@type": "Apartment",
+      "name": "Duplex 5 pièces aux 5e et 6e étages, 42 rue du Bac, Paris 7e",
+      "description": "Duplex traversant de 109,29 m² au sol (101,52 m² loi Carrez) aux 5e et 6e étages d'un immeuble de 1830 en pierre de taille, avec ascenseur et gardien. Vues dégagées sur le musée d'Orsay. À rénover.",
+      "numberOfRooms": 5,
+      "numberOfBedrooms": 3,
+      "numberOfBathroomsTotal": 2,
+      "floorLevel": "5 et 6",
+      "yearBuilt": 1830,
+      "floorSize": {
+        "@type": "QuantitativeValue",
+        "value": 101.52,
+        "unitCode": "MTK",
+        "name": "Surface privative loi Carrez"
+      },
+      "amenityFeature": [
+        { "@type": "LocationFeatureSpecification", "name": "Ascenseur", "value": true },
+        { "@type": "LocationFeatureSpecification", "name": "Gardien", "value": true },
+        { "@type": "LocationFeatureSpecification", "name": "Caves", "value": true },
+        { "@type": "LocationFeatureSpecification", "name": "Fibre optique", "value": true }
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "42 rue du Bac",
+        "postalCode": "75007",
+        "addressLocality": "Paris",
+        "addressCountry": "FR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 48.8568,
+        "longitude": 2.3269
+      },
+      "image": "https://louchaumeau-maker.github.io/42-rue-du-bac/assets/img/og.jpg"
+    },
     "offers": {
       "@type": "Offer",
       "price": "2000000",
-      "priceCurrency": "EUR"
-    },
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "42 rue du Bac",
-      "postalCode": "75007",
-      "addressLocality": "Paris",
-      "addressCountry": "FR"
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock",
+      "seller": {
+        "@type": "Organization",
+        "name": "SAS YP"
+      }
     }
   }
   </script>
 </head>
 <body>
 
-  <a class="skip-link" href="#recit">Aller au contenu</a>
+  <a class="skip-link" href="#photos">Aller au contenu</a>
 
-  <!-- Écran d'ouverture -->
-  <div class="loader" id="loader" aria-hidden="true">
-    <div class="loader__inner">
-      <p class="loader__eyebrow">Paris VII, Saint-Thomas d'Aquin</p>
-      <p class="loader__title">42, rue du Bac</p>
-      <span class="loader__line"></span>
-    </div>
-  </div>
-
-  <div class="progress" aria-hidden="true"></div>
-
-  <header class="nav nav--light" id="nav">
+  <header class="nav" id="nav">
     <a class="nav__brand" href="#hero">42, rue du Bac <span>Paris VII</span></a>
     <nav class="nav__links" aria-label="Navigation principale">
-      <a href="#visite">La visite</a>
-      <a href="#galerie">Galerie</a>
-      <a href="#projections">Projections</a>
+      <a href="#photos">Photos</a>
+      <a href="#fiche">Fiche</a>
       <a href="#plans">Plans</a>
-      <a href="#quartier">Quartier</a>
-      <a href="#contact">Contact</a>
+      <a href="#projections">Projections</a>
     </nav>
-    <button class="nav__burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu">
-      <span></span><span></span>
-    </button>
+    <a class="btn btn--dark nav__cta" href="#contact">Organiser une visite</a>
   </header>
-
-  <div class="menu" id="menu" aria-hidden="true">
-    <nav class="menu__links" aria-label="Menu">
-      <a href="#visite">La visite</a>
-      <a href="#galerie">Galerie</a>
-      <a href="#projections">Projections</a>
-      <a href="#plans">Plans</a>
-      <a href="#quartier">Quartier</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <p class="menu__meta">Duplex de 109,29 m² au sol · Paris VII</p>
-  </div>
 
   <div class="sticky-cta" id="stickyCta" aria-hidden="true">
     <div class="sticky-cta__inner">
@@ -104,7 +113,7 @@
 
   <main>
 
-    <!-- ======================= HERO ======================= -->
+    <!-- ============ [1] ARRIVÉE : une image, le prix, rien d'autre ============ -->
     <section class="hero" id="hero">
       <picture class="hero__media">
         <img src="assets/img/orsay-2400.webp" width="2400" height="1600"
@@ -121,434 +130,164 @@
           <span class="hero__price">2 000 000 €</span>
           <span class="hero__proof">Présenté par SAS YP</span>
         </p>
-        <div class="hero__cta">
-          <button class="btn btn--light" type="button" data-tour-open data-scenario="actuel">Visite virtuelle</button>
-          <a class="btn btn--light-ghost" href="#recit">Découvrir le bien</a>
-        </div>
       </div>
+      <p class="hero__cue" aria-hidden="true"><span></span>Faites défiler</p>
     </section>
-    <div class="nav-sentinel" id="navSentinel" aria-hidden="true"></div>
 
-    <!-- ======================= LA BALADE : planète → fenêtre → drone ======================= -->
-    <section class="visite" id="visite">
-      <div class="walk" id="walk">
-        <div class="walk__sticky" id="walkSticky">
-          <img class="walk__poster" src="assets/walk/poster.jpg" alt="Le 42 rue du Bac vu du ciel, point de départ de la balade" loading="lazy" decoding="async">
-          <canvas id="walkCanvas" role="img" aria-label="Balade continue, pilotée par le défilement : de Paris vu du ciel jusqu'à l'appartement, entrée par la fenêtre du 5e étage, puis traversée en drone de l'état actuel à l'aménagement virtuel, montée au 6e par la trémie et retour aux conditions réelles"></canvas>
-          <div class="walk__hero" id="walkHero" aria-hidden="true">
-            <p class="walk__hero-eyebrow">Paris VII · Saint-Thomas d'Aquin</p>
-            <p class="walk__hero-title">42, rue du Bac</p>
-            <p class="walk__hero-cue">Faites défiler pour approcher</p>
+    <!-- ============ [2] LE BLOC VIDÉO : Terre → rue du Bac → l'appartement ============ -->
+    <section class="opener" id="ouverture" aria-label="Film d'ouverture : de la Terre à l'appartement">
+      <div class="opener__sticky">
+        <div class="opener__frame" id="openerFrame">
+          <video id="openerVideo" src="assets/video/ouverture.mp4" poster="assets/video/ouverture-poster.jpg"
+                 muted playsinline preload="none"
+                 aria-label="Descente continue sur imagerie satellite réelle, de la Terre jusqu'aux toits du 42 rue du Bac, puis visite de l'appartement en photographies animées"></video>
+          <div class="opener__caption" id="openerCaption" aria-hidden="true">
+            <p class="opener__caption-eyebrow" id="capEyebrow"></p>
+            <p class="opener__caption-name" id="capName"></p>
           </div>
-          <div class="walk__vignette" aria-hidden="true"></div>
-          <p class="walk__chapter" id="walkChapter" aria-hidden="true"></p>
-          <p class="walk__badge" id="walkBadge">Aménagement virtuel · projection IA</p>
-          <nav class="walk__rail is-hidden" id="walkRail" aria-label="Étapes de la visite"></nav>
-          <div class="walk__notes" id="walkNotes" aria-hidden="true"></div>
-          <div class="walk__load" id="walkLoad" hidden><span id="walkLoadBar"></span></div>
-          <button class="walk__tour btn btn--light-ghost" type="button" data-tour-open data-scenario="actuel">Explorer librement</button>
+          <button class="opener__skip" id="openerSkip" type="button">Passer<span aria-hidden="true">&nbsp;→</span></button>
+          <div class="opener__bar" id="openerBar" aria-hidden="true"><span></span></div>
         </div>
       </div>
     </section>
 
-
-    <!-- ======================= RÉCIT ======================= -->
-    <section class="recit" id="recit">
-      <div class="wrap">
-        <div class="recit__grid">
-          <h2 class="recit__title reveal">Les deux derniers étages d'une adresse rare, entre cour pavée et toits de Paris.</h2>
-          <div class="recit__body">
-            <p class="reveal">Dans la prestigieuse rue du Bac, au cœur du quartier Saint-Thomas d'Aquin, cet élégant duplex occupe les 5ᵉ et 6ᵉ étages d'un immeuble ancien de 1830 en pierre de taille, sécurisé, avec ascenseur et gardien.</p>
-            <p class="reveal">Traversant et très lumineux, il bénéficie de vues dégagées sur le musée d'Orsay et les toits de Paris. Ses 5 pièces, dont 3 chambres, une cuisine et 2 salles d'eau, se déploient sur deux niveaux.</p>
-            <p class="reveal">L'ensemble est à rénover et offre un véritable potentiel d'aménagement sur mesure, dans un environnement privilégié, à proximité immédiate des transports, des écoles et des jardins. Une opportunité rare dans un secteur particulièrement recherché.</p>
-          </div>
-        </div>
-        <ul class="figures reveal" role="list">
-          <li><strong>109,29&nbsp;m²</strong><span>surface au sol</span></li>
-          <li><strong>101,52&nbsp;m²</strong><span>loi Carrez</span></li>
-          <li><strong>5</strong><span>pièces</span></li>
-          <li><strong>3</strong><span>chambres</span></li>
-          <li><strong>2</strong><span>niveaux</span></li>
-          <li><strong>2</strong><span>caves</span></li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- ======================= BANDEAU : repères du quartier ======================= -->
-    <section class="marquee-band" aria-label="Repères du quartier">
-      <p class="marquee-band__eyebrow">À deux pas</p>
-      <div class="marquee" aria-hidden="true">
-        <div class="marquee__track">
-          <span>Musée d'Orsay</span><i>◆</i>
-          <span>Le Bon Marché Rive Gauche</span><i>◆</i>
-          <span>La Grande Épicerie de Paris</span><i>◆</i>
-          <span>Saint-Germain-des-Prés</span><i>◆</i>
-          <span>Métro Rue du Bac · Ligne 12</span><i>◆</i>
-          <span>Deyrolle · depuis 1831</span><i>◆</i>
-          <span>Les quais de Seine</span><i>◆</i>
-          <span>Jardins du 7ᵉ</span><i>◆</i>
-        </div>
-        <div class="marquee__track" aria-hidden="true">
-          <span>Musée d'Orsay</span><i>◆</i>
-          <span>Le Bon Marché Rive Gauche</span><i>◆</i>
-          <span>La Grande Épicerie de Paris</span><i>◆</i>
-          <span>Saint-Germain-des-Prés</span><i>◆</i>
-          <span>Métro Rue du Bac · Ligne 12</span><i>◆</i>
-          <span>Deyrolle · depuis 1831</span><i>◆</i>
-          <span>Les quais de Seine</span><i>◆</i>
-          <span>Jardins du 7ᵉ</span><i>◆</i>
-        </div>
-      </div>
-    </section>
-
-    <!-- ======================= FILM : scroll-expansion ======================= -->
-    <section class="film" id="film">
-      <div class="film__sticky">
-        <span class="film__title film__title--l" aria-hidden="true">Le film</span>
-        <div class="film__frame">
-          <video id="filmVideo" src="assets/video/film.mp4?v=2" poster="assets/img/film-poster.jpg?v=2"
-                 muted loop playsinline preload="none"
-                 aria-label="Film de présentation du duplex : photographies du bien animées par IA, aménagements virtuels non contractuels"></video>
-          <button class="film__toggle" id="filmToggle" type="button" aria-label="Mettre le film en pause">Pause</button>
-          <p class="film__caption">Photographies du bien animées par IA. Aménagements virtuels non contractuels.</p>
-        </div>
-        <span class="film__title film__title--r" aria-hidden="true">du bien</span>
-      </div>
-    </section>
-
-    <!-- ======================= IMMEUBLE ======================= -->
-    <section class="bleed" id="immeuble">
-      <figure class="bleed__media">
-        <img src="assets/img/cour-1-1920.webp" width="1920" height="1280"
-             alt="Cour pavée intérieure de l'immeuble, façades en pierre et arbre centenaire"
-             loading="lazy" decoding="async">
-      </figure>
-      <div class="bleed__panel reveal">
-        <h2>L'immeuble</h2>
-        <p>Une cour pavée plantée, des façades de 1830 en pierre de taille, un gardien et un ascenseur. L'immeuble, de standing, compte 6 étages et s'ouvre sur la rue du Bac par un porche sécurisé : digicode, interphone et Vigik.</p>
-      </div>
-    </section>
-
-    <!-- ======================= GALERIE ======================= -->
-    <section class="galerie" id="galerie">
+    <!-- ============ [3] PHOTOS : la galerie pro, zéro artifice ============ -->
+    <section class="photos" id="photos">
       <div class="wrap">
         <header class="section-head reveal">
-          <h2>Galerie</h2>
-          <p>Chaque photographie s'ouvre en plein écran.</p>
+          <h2>L'appartement</h2>
+          <p>Photographies du bien, telles quelles. Chacune s'ouvre en plein écran.</p>
         </header>
-        <div class="galerie__grid" id="galleryGrid">
-          <button data-full="assets/img/orsay-2400.webp" style="--ar:3/2"><img src="assets/img/orsay-1200.webp" width="1200" height="800" alt="Vue sur le pavillon du musée d'Orsay" loading="lazy" decoding="async"><span>La vue sur le musée d'Orsay</span></button>
-          <button data-full="assets/img/cour-1-1920.webp" style="--ar:3/2"><img src="assets/img/cour-1-960.webp" width="960" height="640" alt="Cour pavée de l'immeuble" loading="lazy" decoding="async"><span>La cour pavée</span></button>
-          <button data-full="assets/img/sejour-1-1920.webp" style="--ar:3/2"><img src="assets/img/sejour-1-960.webp" width="960" height="640" alt="Séjour, poutres et parquet" loading="lazy" decoding="async"><span>Le séjour, 5ᵉ étage</span></button>
-          <button data-full="assets/img/sejour-2-1920.webp" style="--ar:3/2"><img src="assets/img/sejour-2-960.webp" width="960" height="640" alt="Séjour, double exposition" loading="lazy" decoding="async"><span>Le séjour, côté fenêtres</span></button>
-          <button data-full="assets/img/sejour-3-1920.webp" style="--ar:3/2"><img src="assets/img/sejour-3-960.webp" width="960" height="640" alt="Séjour vers l'entrée et la cuisine" loading="lazy" decoding="async"><span>Le séjour, vers la cuisine</span></button>
-          <button data-full="assets/img/cuisine-2-1920.webp" style="--ar:3/2"><img src="assets/img/cuisine-2-960.webp" width="960" height="640" alt="Cuisine aménagée et équipée" loading="lazy" decoding="async"><span>La cuisine</span></button>
-          <button data-full="assets/img/chambre-1920.webp" style="--ar:3/2"><img src="assets/img/chambre-960.webp" width="960" height="640" alt="Chambre du 5e étage" loading="lazy" decoding="async"><span>Chambre, 5ᵉ étage</span></button>
-          <button data-full="assets/img/piece-vue-1920.webp" style="--ar:3/2"><img src="assets/img/piece-vue-960.webp" width="960" height="640" alt="Pièce du 5e étage, fenêtre ouverte sur les toits" loading="lazy" decoding="async"><span>Fenêtre sur les toits, 5ᵉ étage</span></button>
-          <button data-full="assets/img/degagement-1920.webp" style="--ar:3/2"><img src="assets/img/degagement-960.webp" width="960" height="640" alt="Dégagement avec placards miroirs" loading="lazy" decoding="async"><span>Le dégagement et ses rangements</span></button>
-          <button data-full="assets/img/salle-eau-1920.webp" style="--ar:3/2"><img src="assets/img/salle-eau-960.webp" width="960" height="640" alt="Salle d'eau du 5e étage" loading="lazy" decoding="async"><span>Salle d'eau</span></button>
-          <button data-full="assets/img/six-4-1920.webp" style="--ar:3/2"><img src="assets/img/six-4-960.webp" width="960" height="640" alt="Séjour du 6e étage sous les toits" loading="lazy" decoding="async"><span>Le séjour du 6ᵉ étage</span></button>
-          <button data-full="assets/img/six-2-1920.webp" style="--ar:3/2"><img src="assets/img/six-2-960.webp" width="960" height="640" alt="Coin cuisine du 6e étage" loading="lazy" decoding="async"><span>Le coin cuisine du 6ᵉ</span></button>
-          <button data-full="assets/img/six-bar-1920.webp" style="--ar:3/2"><img src="assets/img/six-bar-960.webp" width="960" height="640" alt="6e étage, coin cuisine et rangements" loading="lazy" decoding="async"><span>6ᵉ étage, à réinventer</span></button>
-          <button data-full="assets/img/six-chambre-1-1920.webp" style="--ar:3/2"><img src="assets/img/six-chambre-1-960.webp" width="960" height="640" alt="Chambre mansardée" loading="lazy" decoding="async"><span>La chambre mansardée</span></button>
-          <button data-full="assets/img/six-chambre-2-1920.webp" style="--ar:3/2"><img src="assets/img/six-chambre-2-960.webp" width="960" height="640" alt="Chambre du 6e étage" loading="lazy" decoding="async"><span>Chambre, 6ᵉ étage</span></button>
-          <button data-full="assets/img/toits-2400.webp" style="--ar:3/2"><img src="assets/img/toits-1200.webp" width="1200" height="800" alt="Toits de Paris au couchant" loading="lazy" decoding="async"><span>Les toits, au couchant</span></button>
-        </div>
+      </div>
+      <div class="photos__flow wrap" id="galleryGrid">
+        <button class="ph ph--wide" data-full="assets/img/cour-1-1920.webp"><img src="assets/img/cour-1-960.webp" width="960" height="640" alt="Cour pavée de l'immeuble, façades de 1830 et arbre centenaire" loading="lazy" decoding="async"><span>La cour pavée, l'entrée de l'immeuble</span></button>
+        <button class="ph" data-full="assets/img/sejour-1-1920.webp"><img src="assets/img/sejour-1-960.webp" width="960" height="640" alt="Séjour, poutres et parquet" loading="lazy" decoding="async"><span>Le séjour, 5ᵉ étage</span></button>
+        <button class="ph" data-full="assets/img/sejour-2-1920.webp"><img src="assets/img/sejour-2-960.webp" width="960" height="640" alt="Séjour, double exposition" loading="lazy" decoding="async"><span>Le séjour, côté fenêtres</span></button>
+        <button class="ph" data-full="assets/img/sejour-3-1920.webp"><img src="assets/img/sejour-3-960.webp" width="960" height="640" alt="Séjour vers l'entrée et la cuisine" loading="lazy" decoding="async"><span>Vers la cuisine</span></button>
+        <button class="ph" data-full="assets/img/cuisine-2-1920.webp"><img src="assets/img/cuisine-2-960.webp" width="960" height="640" alt="Cuisine aménagée et équipée" loading="lazy" decoding="async"><span>La cuisine</span></button>
+        <button class="ph" data-full="assets/img/chambre-1920.webp"><img src="assets/img/chambre-960.webp" width="960" height="640" alt="Chambre du 5e étage" loading="lazy" decoding="async"><span>Chambre, 5ᵉ étage</span></button>
+        <button class="ph ph--wide" data-full="assets/img/piece-vue-1920.webp"><img src="assets/img/piece-vue-960.webp" width="960" height="640" alt="Pièce du 5e étage, fenêtre ouverte sur les toits" loading="lazy" decoding="async"><span>Fenêtre sur les toits, 5ᵉ étage</span></button>
+        <button class="ph" data-full="assets/img/degagement-1920.webp"><img src="assets/img/degagement-960.webp" width="960" height="640" alt="Dégagement avec placards miroirs" loading="lazy" decoding="async"><span>Le dégagement</span></button>
+        <button class="ph" data-full="assets/img/salle-eau-1920.webp"><img src="assets/img/salle-eau-960.webp" width="960" height="640" alt="Salle d'eau du 5e étage" loading="lazy" decoding="async"><span>Salle d'eau</span></button>
+        <button class="ph" data-full="assets/img/six-4-1920.webp"><img src="assets/img/six-4-960.webp" width="960" height="640" alt="Séjour du 6e étage sous les toits" loading="lazy" decoding="async"><span>Le séjour du 6ᵉ étage</span></button>
+        <button class="ph" data-full="assets/img/six-2-1920.webp"><img src="assets/img/six-2-960.webp" width="960" height="640" alt="Coin cuisine du 6e étage" loading="lazy" decoding="async"><span>Le coin cuisine du 6ᵉ</span></button>
+        <button class="ph" data-full="assets/img/six-chambre-1-1920.webp"><img src="assets/img/six-chambre-1-960.webp" width="960" height="640" alt="Chambre mansardée du 6e étage" loading="lazy" decoding="async"><span>La chambre mansardée</span></button>
+        <button class="ph" data-full="assets/img/six-chambre-2-1920.webp"><img src="assets/img/six-chambre-2-960.webp" width="960" height="640" alt="Chambre du 6e étage" loading="lazy" decoding="async"><span>Chambre, 6ᵉ étage</span></button>
+        <button class="ph ph--wide" data-full="assets/img/toits-2400.webp"><img src="assets/img/toits-1200.webp" width="1200" height="800" alt="Toits de Paris au couchant, depuis l'appartement" loading="lazy" decoding="async"><span>Les toits, au couchant</span></button>
       </div>
     </section>
 
-    <!-- ======================= PROJECTIONS ======================= -->
-    <section class="projections" id="projections">
-      <div class="wrap">
-        <header class="section-head reveal">
-          <h2>Projections</h2>
-          <p>Le même séjour, aujourd'hui puis projeté. Faites glisser pour comparer.</p>
-        </header>
-        <div class="compare reveal" id="compare" role="group" aria-label="Comparateur avant après du séjour">
-          <img class="compare__after" src="assets/img/sejour-stage-1600.webp" width="1536" height="1024" alt="Projection d'aménagement du séjour : cuisine ouverte sur pièce de vie" loading="lazy" decoding="async">
-          <div class="compare__before-wrap" aria-hidden="true">
-            <img class="compare__before" src="assets/img/sejour-2-1920.webp" width="1920" height="1280" alt="" loading="lazy" decoding="async">
-          </div>
-          <div class="compare__handle" aria-hidden="true"><span></span></div>
-          <span class="compare__label compare__label--before" aria-hidden="true">État actuel</span>
-          <span class="compare__label compare__label--after" aria-hidden="true">Projection</span>
-          <input class="compare__range" type="range" min="0" max="100" value="50" aria-label="Position du comparateur avant après">
-        </div>
-        <p class="projections__note reveal">Aménagement virtuel généré par IA, indicatif et non contractuel.</p>
-
-        <div class="stagings reveal">
-          <h3 class="stagings__title">Les pièces réinventées</h3>
-          <p class="stagings__intro">L'appartement projeté, aux deux niveaux : le potentiel d'un aménagement sur mesure. Cliquez pour parcourir chaque pièce dans la visite.</p>
-          <div class="stagings__grid">
-            <button type="button" data-tour-open data-scenario="renove">
-              <img src="assets/img/tremie-sejour-960.webp" srcset="assets/img/tremie-sejour-960.webp 960w, assets/img/tremie-sejour-1600.webp 1600w" sizes="(max-width:700px) 100vw, 50vw" alt="Projection : la trémie et l'escalier reliant les deux niveaux" loading="lazy" decoding="async">
-              <span>La trémie, 5ᵉ → 6ᵉ<em>Projection</em></span>
-            </button>
-            <button type="button" data-tour-open data-scenario="renove">
-              <img src="assets/img/sejour-stage-960.webp" srcset="assets/img/sejour-stage-960.webp 960w, assets/img/sejour-stage-1600.webp 1600w" sizes="(max-width:700px) 100vw, 50vw" alt="Projection d'aménagement du séjour du 5e étage" loading="lazy" decoding="async">
-              <span>Le séjour, 5ᵉ<em>Projection</em></span>
-            </button>
-            <button type="button" data-tour-open data-scenario="renove">
-              <img src="assets/img/cuisine-renovee-960.webp" srcset="assets/img/cuisine-renovee-960.webp 960w, assets/img/cuisine-renovee-1600.webp 1344w" sizes="(max-width:700px) 100vw, 50vw" alt="Projection de la cuisine rénovée du 5e étage" loading="lazy" decoding="async">
-              <span>La cuisine rénovée, 5ᵉ<em>Projection</em></span>
-            </button>
-            <button type="button" data-tour-open data-scenario="renove">
-              <img src="assets/img/chambre-stage-960.webp" srcset="assets/img/chambre-stage-960.webp 960w, assets/img/chambre-stage-1600.webp 1600w" sizes="(max-width:700px) 100vw, 50vw" alt="Projection d'aménagement de la chambre principale du 5e étage" loading="lazy" decoding="async">
-              <span>La chambre principale, 5ᵉ<em>Projection</em></span>
-            </button>
-            <button type="button" data-tour-open data-scenario="renove">
-              <img src="assets/img/bureau-renove-960.webp" srcset="assets/img/bureau-renove-960.webp 960w, assets/img/bureau-renove-1600.webp 1344w" sizes="(max-width:700px) 100vw, 50vw" alt="Projection du bureau ou seconde chambre du 5e étage" loading="lazy" decoding="async">
-              <span>Le bureau / 2ᵉ chambre, 5ᵉ<em>Projection</em></span>
-            </button>
-            <button type="button" data-tour-open data-scenario="renove">
-              <img src="assets/img/salle-eau-renovee-960.webp" srcset="assets/img/salle-eau-renovee-960.webp 960w, assets/img/salle-eau-renovee-1600.webp 1344w" sizes="(max-width:700px) 100vw, 50vw" alt="Projection de la salle d'eau rénovée du 5e étage" loading="lazy" decoding="async">
-              <span>La salle d'eau, 5ᵉ<em>Projection</em></span>
-            </button>
-            <button type="button" data-tour-open data-scenario="renove">
-              <img src="assets/img/degagement-renove-960.webp" srcset="assets/img/degagement-renove-960.webp 960w, assets/img/degagement-renove-1600.webp 1600w" sizes="(max-width:700px) 100vw, 50vw" alt="Projection du dégagement aménagé du 5e étage" loading="lazy" decoding="async">
-              <span>Le dégagement, 5ᵉ<em>Projection</em></span>
-            </button>
-            <button type="button" data-tour-open data-scenario="renove">
-              <img src="assets/img/six-sejour-stage-960.webp" srcset="assets/img/six-sejour-stage-960.webp 960w, assets/img/six-sejour-stage-1600.webp 1344w" sizes="(max-width:700px) 100vw, 50vw" alt="Projection du salon sous les toits du 6e étage" loading="lazy" decoding="async">
-              <span>Le salon sous les toits, 6ᵉ<em>Projection</em></span>
-            </button>
-            <button type="button" data-tour-open data-scenario="renove">
-              <img src="assets/img/six-cuisine-renovee-960.webp" srcset="assets/img/six-cuisine-renovee-960.webp 960w, assets/img/six-cuisine-renovee-1600.webp 1600w" sizes="(max-width:700px) 100vw, 50vw" alt="Projection de la cuisine du 6e étage sous les combles" loading="lazy" decoding="async">
-              <span>La cuisine, 6ᵉ<em>Projection</em></span>
-            </button>
-            <button type="button" data-tour-open data-scenario="renove">
-              <img src="assets/img/six-salon-biblio-960.webp" srcset="assets/img/six-salon-biblio-960.webp 960w, assets/img/six-salon-biblio-1600.webp 1344w" sizes="(max-width:700px) 100vw, 50vw" alt="Projection du salon-bibliothèque du 6e étage" loading="lazy" decoding="async">
-              <span>Le salon-bibliothèque, 6ᵉ<em>Projection</em></span>
-            </button>
-            <button type="button" data-tour-open data-scenario="renove">
-              <img src="assets/img/six-chambre-stage-960.webp" srcset="assets/img/six-chambre-stage-960.webp 960w, assets/img/six-chambre-stage-1600.webp 1600w" sizes="(max-width:700px) 100vw, 50vw" alt="Projection de la chambre d'amis mansardée du 6e étage" loading="lazy" decoding="async">
-              <span>La chambre d'amis, 6ᵉ<em>Projection</em></span>
-            </button>
-          </div>
-        </div>
-
-        <div class="stagings reveal">
-          <h3 class="stagings__title">Le projet investisseur : quatre studios</h3>
-          <p class="stagings__intro">La division possible du duplex en quatre studios indépendants, deux par niveau. Aménagement projeté, non contractuel.</p>
-          <div class="stagings__grid">
-            <button type="button" data-tour-open data-scenario="studios">
-              <img src="assets/img/studio-a-960.webp" srcset="assets/img/studio-a-960.webp 960w, assets/img/studio-a-1600.webp 1600w" sizes="(max-width:700px) 100vw, 50vw" alt="Projection du studio A au 5e étage" loading="lazy" decoding="async">
-              <span>Studio A · 5ᵉ, ~32 m²<em>Projet</em></span>
-            </button>
-            <button type="button" data-tour-open data-scenario="studios">
-              <img src="assets/img/studio-b-960.webp" srcset="assets/img/studio-b-960.webp 960w, assets/img/studio-b-1600.webp 1600w" sizes="(max-width:700px) 100vw, 50vw" alt="Projection du studio B au 5e étage" loading="lazy" decoding="async">
-              <span>Studio B · 5ᵉ, ~32 m²<em>Projet</em></span>
-            </button>
-            <button type="button" data-tour-open data-scenario="studios">
-              <img src="assets/img/studio-c-960.webp" srcset="assets/img/studio-c-960.webp 960w, assets/img/studio-c-1600.webp 1600w" sizes="(max-width:700px) 100vw, 50vw" alt="Projection du studio C au 6e étage" loading="lazy" decoding="async">
-              <span>Studio C · 6ᵉ, ~18 m²<em>Projet</em></span>
-            </button>
-            <button type="button" data-tour-open data-scenario="studios">
-              <img src="assets/img/studio-d-960.webp" srcset="assets/img/studio-d-960.webp 960w, assets/img/studio-d-1600.webp 1600w" sizes="(max-width:700px) 100vw, 50vw" alt="Projection du studio D au 6e étage" loading="lazy" decoding="async">
-              <span>Studio D · 6ᵉ, ~18 m²<em>Projet</em></span>
-            </button>
-          </div>
-        </div>
-
-        <div class="scen reveal">
-          <h3 class="scen__title">Quatre scénarios à explorer</h3>
-          <p class="scen__intro">Chaque scénario se parcourt pièce par pièce dans la visite virtuelle, plans des deux niveaux à l'appui.</p>
-          <ul class="scen__list" role="list">
-            <li>
-              <button type="button" data-tour-open data-scenario="actuel">
-                <strong>État actuel</strong>
-                <span>Le duplex tel qu'il se visite aujourd'hui, de la cour pavée à la vue sur les toits.</span>
-                <em aria-hidden="true">&rarr;</em>
-              </button>
-            </li>
-            <li>
-              <button type="button" data-tour-open data-scenario="renove">
-                <strong>Duplex familial rénové</strong>
-                <span>Cuisine ouverte sur le séjour, suite sous les toits : les deux niveaux réunis autour de la lumière.</span>
-                <em aria-hidden="true">&rarr;</em>
-              </button>
-            </li>
-            <li>
-              <button type="button" data-tour-open data-scenario="studios">
-                <strong>Investisseur, division en 4 studios</strong>
-                <span>Deux studios par niveau, schémas de division à l'appui.</span>
-                <em aria-hidden="true">&rarr;</em>
-              </button>
-            </li>
-            <li>
-              <button type="button" data-tour-open data-scenario="mixte">
-                <strong>Trois-pièces et studio indépendant</strong>
-                <span>Un trois pièces au 5ᵉ, un studio locatif au 6ᵉ, qui dispose déjà d'une cuisine et d'une salle de douche.</span>
-                <em aria-hidden="true">&rarr;</em>
-              </button>
-            </li>
-          </ul>
-          <p class="scen__note">Scénarios d'étude non contractuels, à faire valider par un architecte, le règlement de copropriété et les autorisations d'urbanisme.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ======================= LES PROJETS : plans animés ======================= -->
-    <section class="projets" id="plans">
-      <div class="wrap">
-        <header class="section-head reveal">
-          <h2>Les projets</h2>
-          <p>Quatre lectures du même volume. Les plans s'annotent à mesure que vous descendez.</p>
-        </header>
-      </div>
-      <div class="projets__flow">
-        <div class="projets__chapters">
-          <article class="pchapter" data-project="actuel">
-            <h3>État actuel</h3>
-            <p>Cinq pièces sur deux niveaux : séjour, cuisine séparée, deux chambres et un bureau, deux salles d'eau. Les plans mesurés du certificat structurent chacun des projets qui suivent.</p>
-            <p class="pchapter__facts">109,29 m² au sol, 101,52 m² loi Carrez</p>
-          </article>
-          <article class="pchapter" data-project="renove">
-            <h3>Duplex familial rénové</h3>
-            <p>La cloison de la cuisine s'efface, le mobilier prend place : grande pièce de vie traversante au 5ᵉ, salon-bibliothèque et chambre d'amis sous les toits. Une trémie peut relier les deux niveaux en interne, sous réserve d'étude de structure.</p>
-            <p class="pchapter__facts">Aménagement projeté, sous réserve d'études techniques</p>
-          </article>
-          <article class="pchapter" data-project="studios">
-            <h3>Division en 4 studios</h3>
-            <p>Deux studios par niveau, organisés autour des cuisines et salles d'eau existantes. De l'ordre de 32 m² Carrez chacun au 5ᵉ, 18 m² au 6ᵉ.</p>
-            <p class="pchapter__facts">Division soumise à la copropriété et aux autorisations</p>
-          </article>
-          <article class="pchapter" data-project="mixte">
-            <h3>Trois-pièces et studio indépendant</h3>
-            <p>Un trois pièces complet au 5ᵉ. Au 6ᵉ, un studio locatif déjà équipé d'une cuisine et d'une salle de douche, sous réserve d'un accès indépendant.</p>
-            <p class="pchapter__facts">Environ 64 m² Carrez au 5ᵉ, 37 m² au 6ᵉ</p>
-          </article>
-        </div>
-        <div class="projets__panel" id="projetsPanel" data-project="actuel">
-          <p class="projets__mode" aria-hidden="true"></p>
-          <div class="projets__plan">
-            <p class="projets__label">Niveau 5</p>
-            <img class="projets__planimg" src="assets/img/plan-5e-1235.webp" width="1235" height="759" alt="Plan d'architecte mesuré du 5e étage" loading="lazy" decoding="async">
-            <span class="plan-split" aria-hidden="true"></span>
-            <span class="plan-tags" aria-hidden="true"><i>A</i><i>B</i></span>
-          </div>
-          <div class="projets__plan">
-            <p class="projets__label">Niveau 6</p>
-            <img class="projets__planimg" src="assets/img/plan-6e-996.webp" width="996" height="494" alt="Plan d'architecte mesuré du 6e étage" loading="lazy" decoding="async">
-            <span class="plan-split" aria-hidden="true"></span>
-            <span class="plan-tags" aria-hidden="true"><i>C</i><i>D</i></span>
-          </div>
-          <p class="projets__note">Schémas d'étude non contractuels.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ======================= FICHE TECHNIQUE ======================= -->
+    <!-- ============ [4] FICHE : dense et courte ============ -->
     <section class="fiche" id="fiche">
       <div class="wrap">
         <header class="section-head reveal">
           <h2>L'essentiel</h2>
-          <p>La fiche technique complète du bien.</p>
+          <p>Aux 5ᵉ et 6ᵉ étages d'un immeuble de 1830 en pierre de taille, avec ascenseur et gardien. Traversant, lumineux, à rénover&nbsp;: un potentiel rare dans un secteur recherché.</p>
         </header>
         <div class="fiche__groups">
           <div class="fiche__group reveal">
-            <h3>Surfaces et configuration</h3>
+            <h3>Surfaces</h3>
             <dl>
               <div><dt>Surface au sol</dt><dd>109,29&nbsp;m²</dd></div>
-              <div><dt>Surface privative, loi Carrez</dt><dd>101,52&nbsp;m²</dd></div>
+              <div><dt>Loi Carrez</dt><dd>101,52&nbsp;m²</dd></div>
               <div><dt>Pièces</dt><dd>5, dont 3 chambres</dd></div>
-              <div><dt>Salles d'eau</dt><dd>2</dd></div>
-              <div><dt>WC</dt><dd>2</dd></div>
-              <div><dt>Niveaux</dt><dd>2, aux 5ᵉ et 6ᵉ étages sur 6</dd></div>
+              <div><dt>Salles d'eau</dt><dd>2 · 2 WC</dd></div>
+              <div><dt>Niveaux</dt><dd>2, aux 5ᵉ et 6ᵉ sur 6</dd></div>
               <div><dt>Annexes</dt><dd>2 caves</dd></div>
               <div><dt>Occupation</dt><dd>Libre à la vente</dd></div>
             </dl>
           </div>
           <div class="fiche__group reveal">
-            <h3>Immeuble et copropriété</h3>
+            <h3>Immeuble &amp; copropriété</h3>
             <dl>
               <div><dt>Construction</dt><dd>1830, pierre de taille</dd></div>
-              <div><dt>Standing</dt><dd>Immeuble de standing, 6 étages</dd></div>
               <div><dt>Services</dt><dd>Gardien, ascenseur</dd></div>
               <div><dt>Sécurité</dt><dd>Digicode, interphone, Vigik</dd></div>
               <div><dt>Copropriété</dt><dd>133 lots</dd></div>
+              <div><dt>Composition du bien</dt><dd>5 lots&nbsp;: n<sup>os</sup>&nbsp;11 et 12 au 5ᵉ, n<sup>os</sup>&nbsp;153, 154 et 155 au 6ᵉ</dd></div>
+              <div><dt>Division du 6ᵉ</dt><dd>Relevé géomètre-expert, juillet 2026. Cloisons à édifier, modificatif à publier.</dd></div>
               <div><dt>Procédures en cours</dt><dd>Aucune</dd></div>
             </dl>
           </div>
           <div class="fiche__group reveal">
-            <h3>Confort et diagnostics</h3>
+            <h3>Confort &amp; diagnostics</h3>
             <dl>
-              <div><dt>Exposition</dt><dd>Sud-est et nord-ouest, traversant</dd></div>
+              <div><dt>Exposition</dt><dd>Sud-est et nord-ouest</dd></div>
               <div><dt>Chauffage</dt><dd>Collectif, radiateurs</dd></div>
-              <div><dt>Eau chaude</dt><dd>Collective, chaudière</dd></div>
               <div><dt>Menuiseries</dt><dd>Double vitrage</dd></div>
-              <div><dt>Sols</dt><dd>Parquet</dd></div>
               <div><dt>Internet</dt><dd>Fibre optique</dd></div>
               <div><dt>DPE</dt><dd><span class="dpe dpe--d">D</span>187 kWh<sub>EP</sub>/m²/an</dd></div>
               <div><dt>GES</dt><dd><span class="dpe dpe--a">A</span>5 kg<sub>eq</sub>CO₂/m²/an</dd></div>
-              <div><dt>Diagnostic</dt><dd>22/01/2024, valide jusqu'au 31/12/2033</dd></div>
+              <div><dt>Diagnostic</dt><dd>22/01/2024</dd></div>
             </dl>
           </div>
         </div>
         <div class="fiche__prix reveal">
           <p class="fiche__prix-num">2&nbsp;000&nbsp;000&nbsp;€</p>
-          <p class="fiche__prix-note">Soit 18&nbsp;300&nbsp;€/m² au sol</p>
+          <p class="fiche__prix-note">Soit 18&nbsp;300&nbsp;€/m² au sol · Présenté par SAS YP</p>
         </div>
       </div>
     </section>
 
-    <!-- ======================= QUARTIER ======================= -->
-    <section class="quartier" id="quartier">
-      <figure class="quartier__media">
-        <img src="assets/img/piece-vue-1920.webp" width="1920" height="1280"
-             alt="Fenêtre ouverte sur les toits du quartier depuis le 5e étage" loading="lazy" decoding="async">
-      </figure>
+    <!-- ============ [5] PLANS : le relevé du géomètre, redessiné ============ -->
+    <section class="plans" id="plans">
       <div class="wrap">
-        <div class="quartier__intro reveal">
-          <h2>Saint-Thomas d'Aquin, rive gauche</h2>
-          <p>La rue du Bac relie le carré Saint-Germain-des-Prés à la Seine, entre antiquaires, galeries et maisons historiques. Une adresse de centre-ville, au calme sur cour, où tout se fait à pied.</p>
-        </div>
-        <div class="quartier__cols">
-          <div class="reveal">
-            <h3>Culture</h3>
-            <p>Le musée d'Orsay, visible depuis l'appartement, la Seine et les quais, les galeries de Saint-Germain-des-Prés. Au 46 de la rue, la maison Deyrolle, institution parisienne depuis 1831.</p>
-          </div>
-          <div class="reveal">
-            <h3>Commerces</h3>
-            <p>Rue commerçante et marchés de bouche du quartier, Le Bon Marché Rive Gauche et La Grande Épicerie de Paris à quelques rues. Rues piétonnes à proximité.</p>
-          </div>
-          <div class="reveal">
-            <h3>Transports</h3>
-            <p>Métro Rue du Bac, ligne 12, et lignes de bus au pied de l'immeuble. La gare du musée d'Orsay, RER C, de l'autre côté du pont Royal, relie l'ouest parisien.</p>
-          </div>
-          <div class="reveal">
-            <h3>Familles</h3>
-            <p>Écoles du quartier, jardins et squares à proximité immédiate. Un environnement recherché, à la fois central et résidentiel.</p>
-          </div>
-        </div>
-        <div class="situation reveal">
-          <div class="situation__map">
-            <div class="situation__fallback" aria-hidden="true">
-              <p class="situation__coords">48.8568&nbsp;N, 2.3269&nbsp;E</p>
-              <p class="situation__addr">42, rue du Bac<br>75007 Paris</p>
+        <header class="section-head reveal">
+          <h2>Les plans</h2>
+          <p>Relevé du géomètre-expert (Cabinet FLF, juillet 2026), redessiné. Le lot historique du 6ᵉ a été subdivisé en trois lots&nbsp;— dont un lot de desserte donnant sur le palier commun&nbsp;: le studio indépendant du 6ᵉ n'est plus une hypothèse, c'est une configuration actée.</p>
+        </header>
+        <div class="plans__grid">
+          <figure class="plan reveal">
+            <figcaption><strong>5ᵉ étage</strong><span>Lots 11 et 12 · situation existante</span></figcaption>
+            <img src="assets/img/plan-lots-5e.svg" alt="Plan du 5e étage redessiné d'après le relevé du géomètre : lot 11 (deux chambres, salle d'eau, dégagement) et lot 12 (séjour, cuisine, entrée), escalier commun et porte condamnée" loading="lazy" decoding="async">
+          </figure>
+          <figure class="plan reveal">
+            <figcaption>
+              <strong>6ᵉ étage</strong>
+              <span class="plan__toggle" role="group" aria-label="Choisir l'état du plan du 6e étage">
+                <button type="button" class="is-on" id="planAvant" aria-pressed="true">Avant</button>
+                <button type="button" id="planApres" aria-pressed="false">Après subdivision</button>
+              </span>
+            </figcaption>
+            <div class="plan__stack">
+              <img src="assets/img/plan-lots-6e-avant.svg" id="planImgAvant" alt="Plan du 6e étage avant modification : lot 17 unique" loading="lazy" decoding="async">
+              <img src="assets/img/plan-lots-6e-apres.svg" id="planImgApres" class="is-hidden" alt="Plan du 6e étage après modification : lots 153 (séjour et coin cuisine), 154 (pièce et salle d'eau) et 155 (lot de desserte sur le palier commun), cloisons à édifier" loading="lazy" decoding="async">
             </div>
-            <div id="aeroMap" role="application" aria-label="Vue aérienne interactive du 42 rue du Bac"></div>
-          </div>
-          <div class="situation__body">
-            <h3>S'y rendre</h3>
-            <p>42, rue du Bac, 75007 Paris, quartier Saint-Thomas d'Aquin, entre Saint-Germain-des-Prés et la Seine. La vue aérienne descend jusqu'aux toits de l'immeuble : déplacez-vous, zoomez, explorez.</p>
-            <a class="btn btn--ink" href="https://www.google.com/maps/place/42+Rue+du+Bac,+75007+Paris/@48.8567802,2.3269497,163m/data=!3m1!1e3" target="_blank" rel="noopener">Explorer en 3D</a>
-          </div>
+            <p class="plan__note">Cloisons à édifier · modificatif de copropriété à publier.</p>
+          </figure>
         </div>
       </div>
     </section>
 
-    <!-- ======================= CONTACT ======================= -->
+    <!-- ============ [6] PROJECTIONS : uniquement les fidèles ============ -->
+    <section class="projections" id="projections">
+      <div class="wrap">
+        <header class="section-head reveal">
+          <h2>Projections</h2>
+          <p>Le potentiel des volumes, meublés virtuellement sur les photographies réelles. L'architecture — murs, fenêtres, poutres — n'est jamais modifiée.</p>
+        </header>
+        <div class="compare reveal" id="compare" role="group" aria-label="Comparateur avant après du séjour du 6e étage">
+          <img class="compare__after" src="assets/img/six-sejour-stage-1600.webp" width="1344" height="768" alt="Projection d'aménagement du séjour du 6e étage" loading="lazy" decoding="async">
+          <div class="compare__before-wrap" aria-hidden="true">
+            <img class="compare__before" src="assets/img/six-4-compare-1344.webp" width="1344" height="768" alt="" loading="lazy" decoding="async">
+          </div>
+          <div class="compare__handle" aria-hidden="true"><span></span></div>
+          <span class="compare__label compare__label--before" aria-hidden="true">Le 6ᵉ, aujourd'hui</span>
+          <span class="compare__label compare__label--after" aria-hidden="true">Projection</span>
+          <input class="compare__range" type="range" min="0" max="100" value="50" aria-label="Position du comparateur avant après">
+        </div>
+        <div class="projections__grid" id="projGrid">
+          <figure class="proj reveal" data-proj="chambre-stage"><img src="assets/img/chambre-stage-960.webp" width="960" height="640" alt="Projection d'aménagement de la chambre principale du 5e étage" loading="lazy" decoding="async"><figcaption>La chambre principale, 5ᵉ · projection</figcaption></figure>
+          <figure class="proj reveal" data-proj="cuisine-renovee"><img src="assets/img/cuisine-renovee-960.webp" width="960" height="640" alt="Projection de la cuisine rénovée du 5e étage" loading="lazy" decoding="async"><figcaption>La cuisine rénovée, 5ᵉ · projection</figcaption></figure>
+          <figure class="proj reveal" data-proj="bureau-renove"><img src="assets/img/bureau-renove-960.webp" width="960" height="640" alt="Projection du bureau ou seconde chambre du 5e étage" loading="lazy" decoding="async"><figcaption>Le bureau / 2ᵉ chambre, 5ᵉ · projection</figcaption></figure>
+          <figure class="proj reveal" data-proj="six-salon-biblio"><img src="assets/img/six-salon-biblio-960.webp" width="960" height="640" alt="Projection du salon-bibliothèque du 6e étage" loading="lazy" decoding="async"><figcaption>Le salon-bibliothèque, 6ᵉ · projection</figcaption></figure>
+        </div>
+        <p class="projections__note reveal">Aménagements virtuels générés par IA sur les photographies du bien, indicatifs et non contractuels.</p>
+      </div>
+    </section>
+
+    <!-- ============ [7] CONTACT : un vrai formulaire ============ -->
     <section class="contact" id="contact">
-      <svg class="contact__paths" viewBox="0 0 1440 700" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-        <path d="M-120,60 C360,-30 780,170 1560,30" style="animation-duration:26s;animation-delay:-0.0s;stroke-opacity:0.050"/>
-        <path d="M-120,148 C360,46 780,266 1560,102" style="animation-duration:30s;animation-delay:-4.6s;stroke-opacity:0.074"/>
-        <path d="M-120,236 C360,122 780,362 1560,174" style="animation-duration:34s;animation-delay:-9.2s;stroke-opacity:0.098"/>
-        <path d="M-120,324 C360,198 780,458 1560,246" style="animation-duration:37s;animation-delay:-13.8s;stroke-opacity:0.122"/>
-        <path d="M-120,412 C360,274 780,554 1560,318" style="animation-duration:41s;animation-delay:-18.4s;stroke-opacity:0.146"/>
-        <path d="M-120,500 C360,350 780,650 1560,390" style="animation-duration:45s;animation-delay:-23.0s;stroke-opacity:0.170"/>
-        <path d="M-120,588 C360,426 780,746 1560,462" style="animation-duration:49s;animation-delay:-27.6s;stroke-opacity:0.194"/>
-      </svg>
       <div class="wrap">
         <div class="contact__grid">
           <div class="contact__pitch reveal">
@@ -557,18 +296,18 @@
             <p class="contact__prix">2&nbsp;000&nbsp;000&nbsp;€</p>
             <div class="contact__actions">
               <a class="btn btn--dark" href="tel:+33612076883">Appeler</a>
-              <a class="btn btn--dark-ghost" href="mailto:lou.chaumeau@gmail.com?subject=42%20rue%20du%20Bac%2C%20Paris%207e%20%3A%20demande%20de%20visite">Écrire</a>
             </div>
             <form class="lead" id="leadForm" novalidate>
               <p class="lead__eyebrow">Ou recevoir le dossier complet</p>
               <div class="lead__row">
-                <input type="text" name="nom" placeholder="Nom" autocomplete="name" required>
-                <input type="email" name="email" placeholder="Email" autocomplete="email" required>
+                <input type="text" name="nom" placeholder="Nom" aria-label="Nom" autocomplete="name" required>
+                <input type="email" name="email" placeholder="Email" aria-label="Email" autocomplete="email" required>
               </div>
-              <input type="tel" name="tel" placeholder="Téléphone (optionnel)" autocomplete="tel">
-              <button type="submit" class="btn btn--dark-ghost">Recevoir le dossier</button>
+              <input type="tel" name="tel" placeholder="Téléphone (optionnel)" aria-label="Téléphone (optionnel)" autocomplete="tel">
+              <input type="text" name="societe" class="lead__hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+              <button type="submit" class="btn btn--dark-ghost" id="leadSubmit">Recevoir le dossier</button>
               <p class="lead__reassure">30 secondes · sans engagement · réponse sous 24 h · vos données ne sont jamais revendues.</p>
-              <p class="lead__sent" id="leadSent" aria-live="polite">Merci, votre message s'ouvre dans votre messagerie.</p>
+              <p class="lead__sent" id="leadSent" aria-live="polite"></p>
             </form>
           </div>
           <div class="contact__card reveal">
@@ -576,7 +315,6 @@
             <p class="contact__role">SAS YP</p>
             <ul role="list">
               <li><a href="tel:+33612076883">+33 6 12 07 68 83</a></li>
-              <li><a href="mailto:lou.chaumeau@gmail.com">lou.chaumeau@gmail.com</a></li>
             </ul>
             <hr>
             <p class="contact__agency">SAS YP<br>Yoann Chaumeau et Louison Chaumeau<br>Paris VII</p>
@@ -585,43 +323,13 @@
       </div>
       <footer class="footer">
         <div class="wrap">
-          <p>Copropriété de 133 lots, aucune procédure en cours. DPE&nbsp;: D, 187 kWh<sub>EP</sub>/m²/an · GES&nbsp;: A, 5 kg<sub>eq</sub>CO₂/m²/an, diagnostic du 22/01/2024. Informations non contractuelles. Visuels de projection issus d'un home staging virtuel, non contractuels.</p>
+          <p>Copropriété de 133 lots, aucune procédure en cours. DPE&nbsp;: D, 187 kWh<sub>EP</sub>/m²/an · GES&nbsp;: A, 5 kg<sub>eq</sub>CO₂/m²/an, diagnostic du 22/01/2024. Informations non contractuelles. Visuels de projection issus d'un home staging virtuel, non contractuels. Séquence d'ouverture&nbsp;: imagerie satellite réelle et photographies du bien animées.</p>
           <p>Bien présenté par SAS YP, Yoann Chaumeau et Louison Chaumeau.</p>
         </div>
       </footer>
     </section>
 
   </main>
-
-  <!-- Visite virtuelle -->
-  <div class="tour" id="tour" role="dialog" aria-modal="true" aria-label="Visite virtuelle du duplex" hidden>
-    <div class="tour__stage" aria-hidden="true">
-      <img class="tour__img" id="tourImgA" alt="" decoding="async">
-      <img class="tour__img" id="tourImgB" alt="" decoding="async">
-      <div class="tour__scrim"></div>
-      <div class="tour__notes" id="tourNotes"></div>
-    </div>
-    <header class="tour__top">
-      <p class="tour__brand">42, rue du Bac</p>
-      <div class="tour__scenarios" role="tablist" aria-label="Choix du scénario">
-        <button role="tab" data-scenario="actuel" aria-selected="true">État actuel</button>
-        <button role="tab" data-scenario="renove" aria-selected="false">Duplex rénové</button>
-        <button role="tab" data-scenario="studios" aria-selected="false">4 studios</button>
-        <button role="tab" data-scenario="mixte" aria-selected="false">3-pièces + studio</button>
-      </div>
-      <button class="tour__close" id="tourClose" aria-label="Fermer la visite">&times;</button>
-    </header>
-    <div class="tour__info" aria-live="polite">
-      <p class="tour__level" id="tourLevel"></p>
-      <h3 class="tour__room" id="tourRoom"></h3>
-      <p class="tour__desc" id="tourDesc"></p>
-      <p class="tour__note" id="tourNote"></p>
-    </div>
-    <aside class="tour__plan" id="tourPlan" aria-label="Plan du niveau"></aside>
-    <button class="tour__arrow tour__arrow--prev" id="tourPrev" aria-label="Étape précédente">&larr;</button>
-    <button class="tour__arrow tour__arrow--next" id="tourNext" aria-label="Étape suivante">&rarr;</button>
-    <p class="tour__count" id="tourCount"></p>
-  </div>
 
   <!-- Lightbox -->
   <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photographie en plein écran" hidden>
@@ -635,7 +343,6 @@
     <p class="lightbox__count" id="lbCount"></p>
   </div>
 
-  <script src="assets/vendor/leaflet.js" defer></script>
-  <script src="js/main.js?v=19" defer></script>
+  <script src="js/main.js?v=20" defer></script>
 </body>
 </html>
