@@ -199,8 +199,8 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 500; color: var(--ink); }
 
 /* ---------- [2] Opener vidéo ---------- */
 
-/* Course de scroll calée sur la durée de la vidéo (14,4 s). */
-.opener { position: relative; height: 150vh; background: #05070a; }
+/* Course de scroll calée sur la durée du film (34,4 s). */
+.opener { position: relative; height: 300vh; background: #05070a; }
 .opener__sticky { position: sticky; top: 0; height: 100vh; height: 100svh; overflow: hidden; display: grid; place-items: center; }
 .opener__frame {
   position: relative; width: 100%; height: 100%; overflow: hidden;
@@ -250,36 +250,7 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 500; color: var(--ink); }
 .opener__bar { position: absolute; left: 0; right: 0; bottom: 0; height: 2px; background: rgba(244, 242, 237, 0.12); }
 .opener__bar span { display: block; height: 100%; width: 0; background: #d8bc85; }
 
-/* ---------- [3] Visite ---------- */
-
-.visite { padding: clamp(4rem, 10vh, 7rem) 0 clamp(1rem, 2vh, 2rem); }
-.visite__frame {
-  position: relative; overflow: hidden;
-  background: #0a0a0c; aspect-ratio: 16 / 9;
-}
-.visite__frame video { width: 100%; height: 100%; object-fit: cover; display: block; }
-.visite__play {
-  position: absolute; inset: auto auto 1.4rem 1.4rem;
-  display: inline-flex; align-items: center; gap: 0.85em;
-  font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase;
-  color: #f6f4ef; background: rgba(10, 10, 12, 0.55);
-  border: 1px solid rgba(246, 244, 239, 0.4);
-  padding: 0.9em 1.6em;
-  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
-  transition: background 0.3s var(--ease), border-color 0.3s var(--ease);
-}
-.visite__play span {
-  width: 0; height: 0;
-  border-left: 9px solid currentColor;
-  border-top: 6px solid transparent; border-bottom: 6px solid transparent;
-}
-.visite__play:hover { background: rgba(10, 10, 12, 0.75); border-color: #d8bc85; }
-.visite__frame.is-playing .visite__play { display: none; }
-@media (max-width: 600px) {
-  .visite__play { left: 50%; bottom: 1rem; transform: translateX(-50%); padding: 0.8em 1.2em; }
-}
-
-/* ---------- [4] Photos ---------- */
+/* ---------- [3] Photos ---------- */
 
 .photos { padding: clamp(4rem, 10vh, 7rem) 0 clamp(2.5rem, 6vh, 4.5rem); }
 .photos__flow {

@@ -46,9 +46,9 @@
   new IntersectionObserver(([e]) => { contactSeen = e.isIntersecting; syncCta(); }, { threshold: 0.15 })
     .observe($("#contact"));
 
-  /* ---------- [2] Bloc vidéo d'ouverture ---------- */
+  /* ---------- [2] Le film ---------- */
 
-  const opener = $("#ouverture");
+  const opener = $("#film");
   const frame = $("#openerFrame");
   const video = $("#openerVideo");
   const capEl = $("#openerCaption");
@@ -102,17 +102,22 @@
     video.play().then(() => frame.classList.remove("is-blocked")).catch(() => {});
   });
 
-  // L'arrivée : descente satellite (0→8,8 s) puis atterrissage dans la cour
-  // pavée. Les intérieurs sont le sujet de la visite, plus de l'ouverture.
-  // [t, eyebrow, nom]
+  // Le film en un seul plan (34,4 s) : orbite → cour → 5ᵉ → toits → 6ᵉ.
+  // Les repères suivent la table de montage de film.sh. [t, eyebrow, nom]
   const CAPS = [
     [0.0, "Depuis l'orbite", "La Terre"],
     [1.65, "Europe de l'Ouest", "La France"],
     [3.54, "Île-de-France", "Paris"],
     [5.70, "Rive gauche", "Le 7ᵉ arrondissement"],
     [7.34, "Saint-Thomas d'Aquin", "Rue du Bac"],
-    [9.5, "L'immeuble", "La cour pavée"],
-    [13.6, "", ""]
+    [8.8, "L'immeuble", "La cour pavée"],
+    [12.4, "5ᵉ étage", "Le séjour"],
+    [17.6, "5ᵉ étage", "La cuisine"],
+    [20.5, "5ᵉ étage", "La chambre"],
+    [23.2, "5ᵉ étage", "Le bureau, sur les toits"],
+    [27.3, "6ᵉ étage", "Le séjour"],
+    [30.6, "6ᵉ étage", "La chambre mansardée"],
+    [33.9, "", ""]
   ];
   let capIdx = -1;
   video.addEventListener("timeupdate", () => {
@@ -230,21 +235,7 @@
   planAvant.addEventListener("click", () => setPlan(false));
   planApres.addEventListener("click", () => setPlan(true));
 
-  /* ---------- [6] Bloc visite : lecture à la demande ---------- */
-
-  const visiteVideo = $("#visiteVideo");
-  const visitePlay = $("#visitePlay");
-  if (visiteVideo && visitePlay) {
-    const frame = visiteVideo.closest(".visite__frame");
-    /* Le bouton disparaît dès la première lecture : le remettre en pause le
-       ferait réapparaître par-dessus les contrôles natifs, qui restent visibles. */
-    visitePlay.addEventListener("click", () => {
-      visiteVideo.play();
-      frame.classList.add("is-playing");
-    });
-  }
-
-  /* ---------- [7] Formulaire → table leads (Supabase, insert-only) ---------- */
+  /* ---------- [6] Formulaire → table leads (Supabase, insert-only) ---------- */
 
   const LEADS_URL = "https://ialrthwythkfnjgmtqjo.supabase.co/rest/v1/leads_42bac";
   const LEADS_KEY = "sb_publishable_q-1fcmuWWNntnFgOFQkIbw_TaPXi4vg";

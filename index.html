@@ -29,7 +29,7 @@
   <link rel="preload" href="assets/fonts/Manrope-400.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" as="image" type="image/webp" imagesrcset="assets/img/orsay-1200.webp 1200w, assets/img/orsay-1600.webp 1600w, assets/img/orsay-2400.webp 2400w" imagesizes="100vw" fetchpriority="high">
   <link rel="stylesheet" href="assets/fonts/fonts.css?v=17">
-  <link rel="stylesheet" href="css/main.css?v=31">
+  <link rel="stylesheet" href="css/main.css?v=32">
   <noscript><style>.reveal{opacity:1;transform:none}.hero__content>*{opacity:1;transform:none}.opener__frame{transform:none;border-radius:0}</style></noscript>
   <script type="application/ld+json">
   {
@@ -96,10 +96,10 @@
   <header class="nav" id="nav">
     <a class="nav__brand" href="#hero">42, rue du Bac <span>Paris VII</span></a>
     <nav class="nav__links" aria-label="Navigation principale">
+      <a href="#film">Le film</a>
       <a href="#photos">Photos</a>
+      <a href="#projections">Projets</a>
       <a href="#fiche">Fiche</a>
-      <a href="#plans">Plans</a>
-      <a href="#projections">Projections</a>
     </nav>
     <a class="btn btn--dark nav__cta" href="#contact">Organiser une visite</a>
   </header>
@@ -134,13 +134,13 @@
       <p class="hero__cue" aria-hidden="true"><span></span>Faites défiler</p>
     </section>
 
-    <!-- ============ [2] LE BLOC VIDÉO : Terre → rue du Bac → l'appartement ============ -->
-    <section class="opener" id="ouverture" aria-label="Film d'ouverture : de la Terre à l'appartement">
+    <!-- ============ [2] LE FILM : un seul plan, de l'orbite au 6ᵉ étage ============ -->
+    <section class="opener" id="film" aria-label="Le film : de l'orbite à l'appartement">
       <div class="opener__sticky">
         <div class="opener__frame" id="openerFrame">
-          <video id="openerVideo" src="assets/video/ouverture.mp4?v=4" poster="assets/img/ouverture-poster.webp?v=4"
+          <video id="openerVideo" src="assets/video/film.mp4?v=1" poster="assets/img/film-poster.webp?v=1"
                  muted playsinline preload="none"
-                 aria-label="Descente continue sur imagerie satellite réelle, de la Terre jusqu'à la cour pavée du 42 rue du Bac"></video>
+                 aria-label="Film continu : descente depuis l'orbite jusqu'à la cour pavée du 42 rue du Bac, puis parcours du séjour du 5ᵉ étage à la chambre mansardée du 6ᵉ"></video>
           <div class="opener__caption" id="openerCaption" aria-hidden="true">
             <p class="opener__caption-eyebrow" id="capEyebrow"></p>
             <p class="opener__caption-name" id="capName"></p>
@@ -152,59 +152,47 @@
       </div>
     </section>
 
-    <!-- ============ [3] VISITE : montage des photos réelles ============ -->
-    <section class="visite" id="visite">
-      <div class="wrap">
-        <header class="section-head reveal">
-          <h2>La visite</h2>
-          <p>Un vol continu du séjour du 5ᵉ jusqu'à la chambre mansardée du 6ᵉ, tourné depuis les photographies du bien. Aucune pièce inventée.</p>
-        </header>
-      </div>
-      <div class="wrap">
-        <div class="visite__frame reveal">
-          <video id="visiteVideo" poster="assets/img/visite-poster.webp?v=4"
-                 muted playsinline preload="none" controls
-                 aria-label="Visite de l'appartement : séjour, cuisine, chambre et bureau au 5ᵉ étage, puis séjour, coin cuisine et chambre mansardée au 6ᵉ, en photographies animées">
-            <source src="assets/video/visite.mp4?v=4" type="video/mp4">
-          </video>
-          <button class="visite__play" id="visitePlay" type="button" aria-label="Lancer la visite">
-            <span aria-hidden="true"></span>Lancer la visite · 27 s
-          </button>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ [4] PHOTOS : la galerie pro, zéro artifice ============ -->
+    <!-- ============ [3] PHOTOS : la galerie pro, zéro artifice ============ -->
     <section class="photos" id="photos">
       <div class="wrap">
         <header class="section-head reveal">
           <h2>Les deux appartements</h2>
-          <p>Photographies du bien, telles quelles, étage par étage. Chacune s'ouvre en plein écran.</p>
+          <p>Les photographies du bien, telles quelles. Chacune s'ouvre en plein écran.</p>
         </header>
       </div>
       <div class="photos__flow wrap" id="galleryGrid">
-        <div class="photos__chapter reveal"><h3>L'immeuble</h3><span></span></div>
-        <button class="ph ph--wide" data-full="assets/img/cour-1-1920.webp"><img src="assets/img/cour-1-960.webp" width="960" height="640" alt="Cour pavée de l'immeuble, façades de 1830 et arbre centenaire" loading="lazy" decoding="async"><span>La cour pavée, l'entrée de l'immeuble</span></button>
         <div class="photos__chapter reveal"><h3>Le 5ᵉ étage</h3><span></span><em>64,05 m² Carrez</em></div>
-        <button class="ph" data-full="assets/img/sejour-1-1920.webp"><img src="assets/img/sejour-1-960.webp" width="960" height="640" alt="Séjour du 5e étage, poutres et parquet" loading="lazy" decoding="async"><span>Le séjour</span></button>
-        <button class="ph" data-full="assets/img/sejour-2-1920.webp"><img src="assets/img/sejour-2-960.webp" width="960" height="640" alt="Séjour du 5e étage, double exposition" loading="lazy" decoding="async"><span>Le séjour, côté fenêtres</span></button>
-        <button class="ph" data-full="assets/img/sejour-3-1920.webp"><img src="assets/img/sejour-3-960.webp" width="960" height="640" alt="Séjour du 5e étage vers l'entrée et la cuisine" loading="lazy" decoding="async"><span>Vers la cuisine</span></button>
+        <button class="ph ph--wide" data-full="assets/img/sejour-1-1920.webp"><img src="assets/img/sejour-1-960.webp" width="960" height="640" alt="Séjour du 5e étage, poutres et parquet" loading="lazy" decoding="async"><span>Le séjour</span></button>
         <button class="ph" data-full="assets/img/cuisine-2-1920.webp"><img src="assets/img/cuisine-2-960.webp" width="960" height="640" alt="Cuisine aménagée et équipée du 5e étage" loading="lazy" decoding="async"><span>La cuisine</span></button>
         <button class="ph" data-full="assets/img/chambre-1920.webp"><img src="assets/img/chambre-960.webp" width="960" height="640" alt="Chambre du 5e étage" loading="lazy" decoding="async"><span>La chambre</span></button>
-        <button class="ph ph--wide" data-full="assets/img/piece-vue-1920.webp"><img src="assets/img/piece-vue-960.webp" width="960" height="640" alt="Pièce du 5e étage, fenêtre ouverte sur les toits" loading="lazy" decoding="async"><span>Fenêtre sur les toits</span></button>
-        <button class="ph" data-full="assets/img/degagement-1920.webp"><img src="assets/img/degagement-960.webp" width="960" height="640" alt="Dégagement du 5e étage avec placards miroirs" loading="lazy" decoding="async"><span>Le dégagement</span></button>
-        <button class="ph" data-full="assets/img/salle-eau-1920.webp"><img src="assets/img/salle-eau-960.webp" width="960" height="640" alt="Salle d'eau du 5e étage" loading="lazy" decoding="async"><span>La salle d'eau</span></button>
+        <button class="ph ph--wide" data-full="assets/img/piece-vue-1920.webp"><img src="assets/img/piece-vue-960.webp" width="960" height="640" alt="Pièce du 5e étage, fenêtre ouverte sur les toits" loading="lazy" decoding="async"><span>Le bureau, fenêtre sur les toits</span></button>
         <div class="photos__chapter reveal"><h3>Le 6ᵉ étage</h3><span></span><em>37,47 m² Carrez</em></div>
         <button class="ph" data-full="assets/img/six-4-1920.webp"><img src="assets/img/six-4-960.webp" width="960" height="640" alt="Séjour du 6e étage sous les toits" loading="lazy" decoding="async"><span>Le séjour, sous les toits</span></button>
-        <button class="ph" data-full="assets/img/six-2-1920.webp"><img src="assets/img/six-2-960.webp" width="960" height="640" alt="Coin cuisine du 6e étage" loading="lazy" decoding="async"><span>Le coin cuisine</span></button>
         <button class="ph" data-full="assets/img/six-chambre-1-1920.webp"><img src="assets/img/six-chambre-1-960.webp" width="960" height="640" alt="Chambre mansardée du 6e étage" loading="lazy" decoding="async"><span>La chambre mansardée</span></button>
-        <button class="ph" data-full="assets/img/six-chambre-2-1920.webp"><img src="assets/img/six-chambre-2-960.webp" width="960" height="640" alt="Chambre du 6e étage" loading="lazy" decoding="async"><span>La chambre</span></button>
-        <div class="photos__chapter reveal"><h3>Les vues</h3><span></span></div>
-        <button class="ph ph--wide" data-full="assets/img/toits-2400.webp"><img src="assets/img/toits-1200.webp" width="1200" height="800" alt="Toits de Paris au couchant, depuis l'appartement" loading="lazy" decoding="async"><span>Les toits, au couchant</span></button>
+        <div class="photos__chapter reveal"><h3>L'immeuble et la vue</h3><span></span></div>
+        <button class="ph" data-full="assets/img/cour-1-1920.webp"><img src="assets/img/cour-1-960.webp" width="960" height="640" alt="Cour pavée de l'immeuble, façades de 1830 et arbre centenaire" loading="lazy" decoding="async"><span>La cour pavée</span></button>
+        <button class="ph" data-full="assets/img/toits-2400.webp"><img src="assets/img/toits-1200.webp" width="1200" height="800" alt="Toits de Paris au couchant, depuis l'appartement" loading="lazy" decoding="async"><span>Les toits, au couchant</span></button>
       </div>
     </section>
 
-    <!-- ============ [4] FICHE : dense et courte ============ -->
+    <!-- ============ [4] PROJECTIONS : uniquement les fidèles ============ -->
+    <section class="projections" id="projections">
+      <div class="wrap">
+        <header class="section-head reveal">
+          <h2>Projections</h2>
+          <p>Le potentiel des volumes, meublés virtuellement sur les photographies réelles. L'architecture — murs, fenêtres, poutres — n'est jamais modifiée.</p>
+        </header>
+        <div class="projections__grid" id="projGrid">
+          <figure class="proj reveal"><img src="assets/img/chambre-stage-1600.webp" width="1600" height="900" alt="Projection d'aménagement de la chambre du 5e étage" loading="lazy" decoding="async"><figcaption>La chambre, 5ᵉ · projection</figcaption></figure>
+          <figure class="proj reveal"><img src="assets/img/cuisine-renovee-960.webp" width="960" height="549" alt="Projection de la cuisine rénovée du 5e étage" loading="lazy" decoding="async"><figcaption>La cuisine rénovée, 5ᵉ · projection</figcaption></figure>
+          <figure class="proj reveal"><img src="assets/img/bureau-renove-960.webp" width="960" height="549" alt="Projection du bureau ou seconde chambre du 5e étage" loading="lazy" decoding="async"><figcaption>Le bureau / 2ᵉ chambre, 5ᵉ · projection</figcaption></figure>
+          <figure class="proj reveal"><img src="assets/img/six-chambre-stage-960.webp" width="960" height="549" alt="Projection d'aménagement de la chambre mansardée du 6e étage" loading="lazy" decoding="async"><figcaption>La chambre mansardée, 6ᵉ · projection</figcaption></figure>
+        </div>
+        <p class="projections__note reveal">Aménagements virtuels générés par IA sur les photographies du bien, indicatifs et non contractuels.</p>
+      </div>
+    </section>
+
+    <!-- ============ [5] FICHE : dense et courte ============ -->
     <section class="fiche" id="fiche">
       <div class="wrap">
         <header class="section-head reveal">
@@ -264,7 +252,7 @@
       </div>
     </section>
 
-    <!-- ============ [5] PLANS : le relevé du géomètre, redessiné ============ -->
+    <!-- ============ [6] PLANS : le relevé du géomètre, redessiné ============ -->
     <section class="plans" id="plans">
       <div class="wrap">
         <header class="section-head reveal">
@@ -294,23 +282,6 @@
             <p class="plan__note">37,47&nbsp;m² Carrez · cloisons à édifier, modificatif de copropriété à publier. Touchez pour agrandir.</p>
           </figure>
         </div>
-      </div>
-    </section>
-
-    <!-- ============ [6] PROJECTIONS : uniquement les fidèles ============ -->
-    <section class="projections" id="projections">
-      <div class="wrap">
-        <header class="section-head reveal">
-          <h2>Projections</h2>
-          <p>Le potentiel des volumes, meublés virtuellement sur les photographies réelles. L'architecture — murs, fenêtres, poutres — n'est jamais modifiée.</p>
-        </header>
-        <div class="projections__grid" id="projGrid">
-          <figure class="proj reveal"><img src="assets/img/chambre-stage-1600.webp" width="1600" height="900" alt="Projection d'aménagement de la chambre du 5e étage" loading="lazy" decoding="async"><figcaption>La chambre, 5ᵉ · projection</figcaption></figure>
-          <figure class="proj reveal"><img src="assets/img/cuisine-renovee-960.webp" width="960" height="549" alt="Projection de la cuisine rénovée du 5e étage" loading="lazy" decoding="async"><figcaption>La cuisine rénovée, 5ᵉ · projection</figcaption></figure>
-          <figure class="proj reveal"><img src="assets/img/bureau-renove-960.webp" width="960" height="549" alt="Projection du bureau ou seconde chambre du 5e étage" loading="lazy" decoding="async"><figcaption>Le bureau / 2ᵉ chambre, 5ᵉ · projection</figcaption></figure>
-          <figure class="proj reveal"><img src="assets/img/six-chambre-stage-960.webp" width="960" height="549" alt="Projection d'aménagement de la chambre mansardée du 6e étage" loading="lazy" decoding="async"><figcaption>La chambre mansardée, 6ᵉ · projection</figcaption></figure>
-        </div>
-        <p class="projections__note reveal">Aménagements virtuels générés par IA sur les photographies du bien, indicatifs et non contractuels.</p>
       </div>
     </section>
 
@@ -371,6 +342,6 @@
     <p class="lightbox__count" id="lbCount"></p>
   </div>
 
-  <script src="js/main.js?v=29" defer></script>
+  <script src="js/main.js?v=32" defer></script>
 </body>
 </html>
