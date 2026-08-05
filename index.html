@@ -29,7 +29,7 @@
   <link rel="preload" href="assets/fonts/Manrope-400.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" as="image" type="image/webp" imagesrcset="assets/img/orsay-1200.webp 1200w, assets/img/orsay-2400.webp 2400w" imagesizes="100vw" fetchpriority="high">
   <link rel="stylesheet" href="assets/fonts/fonts.css?v=17">
-  <link rel="stylesheet" href="css/main.css?v=21">
+  <link rel="stylesheet" href="css/main.css?v=22">
   <noscript><style>.reveal{opacity:1;transform:none}.hero__content>*{opacity:1;transform:none}.opener__frame{transform:none;border-radius:0}</style></noscript>
   <script type="application/ld+json">
   {
@@ -151,7 +151,29 @@
       </div>
     </section>
 
-    <!-- ============ [3] PHOTOS : la galerie pro, zéro artifice ============ -->
+    <!-- ============ [3] VISITE : montage des photos réelles ============ -->
+    <section class="visite" id="visite">
+      <div class="wrap">
+        <header class="section-head reveal">
+          <h2>La visite</h2>
+          <p>Le 5ᵉ puis le 6ᵉ en un plan continu, monté à partir des photographies du bien. Aucun décor ajouté.</p>
+        </header>
+      </div>
+      <div class="wrap">
+        <div class="visite__frame reveal">
+          <video id="visiteVideo" poster="assets/img/visite-poster.jpg"
+                 muted playsinline preload="none" controls
+                 aria-label="Visite de l'appartement : séjour, cuisine, chambre et bureau au 5ᵉ étage, puis séjour, coin cuisine et chambre mansardée au 6ᵉ, en photographies animées">
+            <source src="assets/video/visite.mp4" type="video/mp4">
+          </video>
+          <button class="visite__play" id="visitePlay" type="button" aria-label="Lancer la visite">
+            <span aria-hidden="true"></span>Lancer la visite · 27 s
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ [4] PHOTOS : la galerie pro, zéro artifice ============ -->
     <section class="photos" id="photos">
       <div class="wrap">
         <header class="section-head reveal">
@@ -278,21 +300,11 @@
           <h2>Projections</h2>
           <p>Le potentiel des volumes, meublés virtuellement sur les photographies réelles. L'architecture — murs, fenêtres, poutres — n'est jamais modifiée.</p>
         </header>
-        <div class="compare reveal" id="compare" role="group" aria-label="Comparateur avant après du séjour du 6e étage">
-          <img class="compare__after" src="assets/img/six-sejour-stage-1600.webp" width="1344" height="768" alt="Projection d'aménagement du séjour du 6e étage" loading="lazy" decoding="async">
-          <div class="compare__before-wrap" aria-hidden="true">
-            <img class="compare__before" src="assets/img/six-4-compare-1344.webp" width="1344" height="768" alt="" loading="lazy" decoding="async">
-          </div>
-          <div class="compare__handle" aria-hidden="true"><span></span></div>
-          <span class="compare__label compare__label--before" aria-hidden="true">Le 6ᵉ, aujourd'hui</span>
-          <span class="compare__label compare__label--after" aria-hidden="true">Projection</span>
-          <input class="compare__range" type="range" min="0" max="100" value="50" aria-label="Position du comparateur avant après">
-        </div>
         <div class="projections__grid" id="projGrid">
-          <figure class="proj reveal" data-proj="chambre-stage"><img src="assets/img/chambre-stage-960.webp" width="960" height="640" alt="Projection d'aménagement de la chambre principale du 5e étage" loading="lazy" decoding="async"><figcaption>La chambre principale, 5ᵉ · projection</figcaption></figure>
-          <figure class="proj reveal" data-proj="cuisine-renovee"><img src="assets/img/cuisine-renovee-960.webp" width="960" height="640" alt="Projection de la cuisine rénovée du 5e étage" loading="lazy" decoding="async"><figcaption>La cuisine rénovée, 5ᵉ · projection</figcaption></figure>
-          <figure class="proj reveal" data-proj="bureau-renove"><img src="assets/img/bureau-renove-960.webp" width="960" height="640" alt="Projection du bureau ou seconde chambre du 5e étage" loading="lazy" decoding="async"><figcaption>Le bureau / 2ᵉ chambre, 5ᵉ · projection</figcaption></figure>
-          <figure class="proj reveal" data-proj="six-salon-biblio"><img src="assets/img/six-salon-biblio-960.webp" width="960" height="640" alt="Projection du salon-bibliothèque du 6e étage" loading="lazy" decoding="async"><figcaption>Le salon-bibliothèque, 6ᵉ · projection</figcaption></figure>
+          <figure class="proj reveal"><img src="assets/img/chambre-stage-1600.webp" width="1600" height="900" alt="Projection d'aménagement de la chambre du 5e étage" loading="lazy" decoding="async"><figcaption>La chambre, 5ᵉ · projection</figcaption></figure>
+          <figure class="proj reveal"><img src="assets/img/cuisine-renovee-960.webp" width="960" height="549" alt="Projection de la cuisine rénovée du 5e étage" loading="lazy" decoding="async"><figcaption>La cuisine rénovée, 5ᵉ · projection</figcaption></figure>
+          <figure class="proj reveal"><img src="assets/img/bureau-renove-960.webp" width="960" height="549" alt="Projection du bureau ou seconde chambre du 5e étage" loading="lazy" decoding="async"><figcaption>Le bureau / 2ᵉ chambre, 5ᵉ · projection</figcaption></figure>
+          <figure class="proj reveal"><img src="assets/img/six-chambre-stage-960.webp" width="960" height="549" alt="Projection d'aménagement de la chambre mansardée du 6e étage" loading="lazy" decoding="async"><figcaption>La chambre mansardée, 6ᵉ · projection</figcaption></figure>
         </div>
         <p class="projections__note reveal">Aménagements virtuels générés par IA sur les photographies du bien, indicatifs et non contractuels.</p>
       </div>
@@ -355,6 +367,6 @@
     <p class="lightbox__count" id="lbCount"></p>
   </div>
 
-  <script src="js/main.js?v=21" defer></script>
+  <script src="js/main.js?v=22" defer></script>
 </body>
 </html>

@@ -171,13 +171,17 @@
   planAvant.addEventListener("click", () => setPlan(false));
   planApres.addEventListener("click", () => setPlan(true));
 
-  /* ---------- [6] Comparateur avant / après ---------- */
+  /* ---------- [6] Bloc visite : lecture à la demande ---------- */
 
-  const compare = $("#compare");
-  if (compare) {
-    $(".compare__range", compare).addEventListener("input", (e) => {
-      compare.style.setProperty("--cut", `${e.target.value}%`);
+  const visiteVideo = $("#visiteVideo");
+  const visitePlay = $("#visitePlay");
+  if (visiteVideo && visitePlay) {
+    const frame = visiteVideo.closest(".visite__frame");
+    visitePlay.addEventListener("click", () => {
+      visiteVideo.play();
+      frame.classList.add("is-playing");
     });
+    visiteVideo.addEventListener("ended", () => frame.classList.remove("is-playing"));
   }
 
   /* ---------- [7] Formulaire → table leads (Supabase, insert-only) ---------- */
