@@ -99,6 +99,15 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 500; color: var(--ink); }
   -webkit-backdrop-filter: blur(14px);
   border-bottom-color: var(--line);
 }
+/* Tant qu'elle flotte sur la photo du hero, la nav prend une palette
+   claire sur un léger fondu : l'encre du thème y était illisible. */
+.nav:not(.is-solid) {
+  background: linear-gradient(to bottom, rgba(10, 10, 14, 0.62), rgba(10, 10, 14, 0) 88px);
+}
+.nav:not(.is-solid) .nav__brand { color: #f6f4ef; }
+.nav:not(.is-solid) .nav__brand span { color: rgba(246, 244, 239, 0.78); }
+.nav:not(.is-solid) .nav__links a { color: rgba(246, 244, 239, 0.88); }
+.nav:not(.is-solid) .nav__links a:hover { color: #d8bc85; }
 .nav__brand {
   font-family: var(--serif); font-size: 1.15rem; color: var(--ink); text-decoration: none;
   letter-spacing: 0.01em; white-space: nowrap;
@@ -149,9 +158,14 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 500; color: var(--ink); }
 
 .hero { position: relative; height: 100svh; min-height: 560px; overflow: hidden; }
 .hero__media, .hero__media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+/* Le voile est calé sur la bande de texte (bas de l'image), pas sur le vide. */
 .hero__scrim {
   position: absolute; inset: 0;
-  background: linear-gradient(to top, rgba(10, 10, 14, 0.78), rgba(10, 10, 14, 0.12) 46%, rgba(10, 10, 14, 0.3));
+  background: linear-gradient(to top,
+    rgba(10, 10, 14, 0.55),
+    rgba(10, 10, 14, 0.72) 22%,
+    rgba(10, 10, 14, 0.34) 58%,
+    rgba(10, 10, 14, 0.42));
 }
 /* Le hero vit sur la photo : sa palette est ancrée à l'image, pas au thème. */
 .hero__content {
@@ -164,7 +178,8 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 500; color: var(--ink); }
 .hero__content > :nth-child(3) { animation-delay: 0.24s; }
 .hero__content > :nth-child(4) { animation-delay: 0.36s; }
 @keyframes heroIn { to { opacity: 1; transform: none; } }
-.hero__eyebrow { font-size: 0.72rem; letter-spacing: 0.34em; text-transform: uppercase; color: #d8bc85; margin-bottom: 1rem; }
+/* Ivoire et non laiton : le doré tombait sur la pierre dorée du pavillon. */
+.hero__eyebrow { font-size: 0.72rem; letter-spacing: 0.34em; text-transform: uppercase; color: rgba(246, 244, 239, 0.9); margin-bottom: 1rem; }
 .hero__title { color: #f6f4ef; font-size: clamp(3rem, 9vw, 6.4rem); line-height: 0.96; text-shadow: 0 2px 40px rgba(0, 0, 0, 0.45); }
 .hero__sub { margin-top: 1rem; font-weight: 300; font-size: clamp(0.95rem, 1.6vw, 1.15rem); color: rgba(246, 244, 239, 0.88); max-width: 38ch; }
 .hero__meta { margin-top: 1.6rem; display: flex; align-items: baseline; gap: 1.6rem; flex-wrap: wrap; }
@@ -184,9 +199,8 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 500; color: var(--ink); }
 
 /* ---------- [2] Opener vidéo ---------- */
 
-/* Course de scroll calée sur la durée de la vidéo (16 s) : plus courte
-   qu'avant, sinon le film se termine bien avant la fin du défilement. */
-.opener { position: relative; height: 170vh; background: #05070a; }
+/* Course de scroll calée sur la durée de la vidéo (22,6 s). */
+.opener { position: relative; height: 195vh; background: #05070a; }
 .opener__sticky { position: sticky; top: 0; height: 100vh; height: 100svh; overflow: hidden; display: grid; place-items: center; }
 .opener__frame {
   position: relative; width: 100%; height: 100%; overflow: hidden;
@@ -338,6 +352,8 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 500; color: var(--ink); }
 }
 .plan__toggle button.is-on { background: var(--accent-wash); color: var(--accent); }
 .plan img { width: 100%; height: auto; }
+.plan__zoom { display: block; width: 100%; padding: 0; text-align: left; }
+.plan__zoom:hover { opacity: 0.85; }
 .plan__stack { position: relative; }
 .plan__stack img.is-hidden { display: none; }
 .plan__note { margin-top: 0.9rem; font-size: 0.72rem; color: var(--muted); font-style: italic; }
@@ -405,31 +421,35 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 500; color: var(--ink); }
 
 /* ---------- Lightbox ---------- */
 
+/* Visionneuse volontairement sombre : elle porte donc sa propre palette
+   claire, les jetons du thème y seraient illisibles. */
 .lightbox {
   position: fixed; inset: 0; z-index: 200;
-  background: rgba(10, 10, 14, 0.96);
+  background: #0a0a0e;
   display: grid; place-items: center;
 }
 .lightbox[hidden] { display: none; }
 .lightbox__stage { max-width: min(92vw, 1500px); max-height: 86vh; }
 .lightbox__stage img { max-width: 100%; max-height: 80vh; width: auto; height: auto; margin-inline: auto; }
-.lightbox__stage figcaption { margin-top: 0.8rem; text-align: center; font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
+.lightbox__stage figcaption { margin-top: 0.8rem; text-align: center; font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(246, 244, 239, 0.72); }
 .lightbox__close {
   position: absolute; top: 1.2rem; right: 1.4rem;
-  font-size: 2rem; line-height: 1; color: var(--ink-soft); padding: 0.4rem;
+  font-size: 2rem; line-height: 1; color: rgba(246, 244, 239, 0.85); padding: 0.6rem 0.8rem;
 }
-.lightbox__close:hover { color: var(--accent); }
+.lightbox__close:hover { color: #d8bc85; }
 .lightbox__arrow {
   position: absolute; top: 50%; transform: translateY(-50%);
-  font-size: 1.6rem; color: var(--ink-soft); padding: 1rem;
+  font-size: 1.6rem; color: rgba(246, 244, 239, 0.85); padding: 1rem 1.2rem;
 }
-.lightbox__arrow:hover { color: var(--accent); }
+.lightbox__arrow:hover { color: #d8bc85; }
 .lightbox__arrow--prev { left: 0.6rem; }
 .lightbox__arrow--next { right: 0.6rem; }
 .lightbox__count {
   position: absolute; bottom: 1.2rem; left: 50%; transform: translateX(-50%);
-  font-size: 0.7rem; letter-spacing: 0.22em; color: var(--muted);
+  font-size: 0.7rem; letter-spacing: 0.22em; color: rgba(246, 244, 239, 0.7);
 }
+/* Un plan agrandi doit rester lisible sur le fond sombre. */
+.lightbox__stage img.is-plan { background: var(--paper); padding: 1.2rem; }
 
 /* ---------- Reveal ---------- */
 

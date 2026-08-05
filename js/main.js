@@ -34,8 +34,13 @@
 
   const stickyCta = $("#stickyCta");
   let heroGone = false, contactSeen = false, openerOn = false;
-  const syncCta = () =>
-    stickyCta.classList.toggle("is-on", heroGone && !contactSeen && !openerOn);
+  /* `inert` plutôt qu'`aria-hidden` : la barre contient un lien focusable,
+     l'annoncer masquée tout en la laissant tabulable était un mensonge. */
+  const syncCta = () => {
+    const on = heroGone && !contactSeen && !openerOn;
+    stickyCta.classList.toggle("is-on", on);
+    stickyCta.toggleAttribute("inert", !on);
+  };
   new IntersectionObserver(([e]) => { heroGone = !e.isIntersecting; syncCta(); })
     .observe($("#hero"));
   new IntersectionObserver(([e]) => { contactSeen = e.isIntersecting; syncCta(); }, { threshold: 0.15 })
@@ -85,17 +90,17 @@
   // descente 0→14,4 s, cour, séjour, pièce vue, 6e, toits. [t, eyebrow, nom]
   const CAPS = [
     [0.0, "Depuis l'orbite", "La Terre"],
-    [1.39, "Europe de l'Ouest", "La France"],
-    [2.99, "Île-de-France", "Paris"],
-    [4.8, "Rive gauche", "Le 7ᵉ arrondissement"],
-    [6.19, "Saint-Thomas d'Aquin", "Rue du Bac"],
-    [7.47, "", ""],
-    [7.95, "L'immeuble", "La cour pavée"],
-    [9.55, "5ᵉ étage", "Le séjour"],
-    [11.15, "5ᵉ étage", "Fenêtre sur les toits"],
-    [12.75, "6ᵉ étage", "Sous les toits"],
-    [14.35, "La vue", "Les toits de Paris"],
-    [15.57, "", ""]
+    [1.95, "Europe de l'Ouest", "La France"],
+    [4.21, "Île-de-France", "Paris"],
+    [6.77, "Rive gauche", "Le 7ᵉ arrondissement"],
+    [8.72, "Saint-Thomas d'Aquin", "Rue du Bac"],
+    [10.53, "", ""],
+    [11.2, "L'immeuble", "La cour pavée"],
+    [13.46, "5ᵉ étage", "Le séjour"],
+    [15.71, "5ᵉ étage", "Fenêtre sur les toits"],
+    [17.97, "6ᵉ étage", "Sous les toits"],
+    [20.23, "La vue", "Les toits de Paris"],
+    [21.95, "", ""]
   ];
   let capIdx = -1;
   video.addEventListener("timeupdate", () => {
@@ -125,22 +130,52 @@
   const lbImg = $("#lbImg");
   const lbCaption = $("#lbCaption");
   const lbCount = $("#lbCount");
-  const shots = $$("#galleryGrid .ph");
+  /* Photos, projections et plans partagent la même visionneuse : à
+     l'écran les plans étaient rendus vers 7 px de haut, illisibles. */
+  const shots = $$("#galleryGrid .ph, #projGrid .proj, .plan__zoom");
+  const bgInert = [$("#nav"), $("#stickyCta"), $("main")];
   let lbIndex = 0;
+  let lastFocus = null;
+
+  const shotData = (el) => {
+    /* Le plan du 6e empile deux SVG : on ouvre celui qui est affiché. */
+    const img = $("img:not(.is-hidden)", el) || $("img", el);
+    const isPlan = el.classList.contains("plan__zoom");
+    /* Pour un plan, la légende vit dans la figure parente, pas dans le bouton. */
+    const fig = isPlan ? el.closest(".plan") : el;
+    const strong = isPlan ? $("figcaption strong", fig) : null;
+    const cap = isPlan ? $("figcaption > span:not(.plan__toggle)", fig) : $("span, figcaption", el);
+    const label = [strong && strong.textContent, cap && cap.textContent]
+      .filter(Boolean).join(" · ");
+    return {
+      full: el.dataset.full || img.src,
+      alt: img.alt,
+      caption: label || img.alt,
+      isPlan,
+    };
+  };
 
   const openLb = (i) => {
     lbIndex = (i + shots.length) % shots.length;
-    const btn = shots[lbIndex];
-    lbImg.src = btn.dataset.full;
-    lbImg.alt = $("img", btn).alt;
-    lbCaption.textContent = $("span", btn).textContent;
+    const d = shotData(shots[lbIndex]);
+    lbImg.src = d.full;
+    lbImg.alt = d.alt;
+    lbImg.classList.toggle("is-plan", d.isPlan);
+    lbCaption.textContent = d.caption;
     lbCount.textContent = `${lbIndex + 1} / ${shots.length}`;
-    lightbox.hidden = false;
-    document.body.style.overflow = "hidden";
+    if (lightbox.hidden) {
+      lastFocus = document.activeElement;
+      bgInert.forEach((el) => el && el.setAttribute("inert", ""));
+      lightbox.hidden = false;
+      document.body.style.overflow = "hidden";
+      $("#lbClose").focus();
+    }
   };
   const closeLb = () => {
     lightbox.hidden = true;
+    bgInert.forEach((el) => el && el.removeAttribute("inert"));
     document.body.style.overflow = "";
+    if (lastFocus) lastFocus.focus();
   };
   shots.forEach((btn, i) => btn.addEventListener("click", () => openLb(i)));
   $("#lbClose").addEventListener("click", closeLb);
@@ -153,6 +188,18 @@
     if (e.key === "ArrowLeft") openLb(lbIndex - 1);
     if (e.key === "ArrowRight") openLb(lbIndex + 1);
   });
+
+  /* Balayage horizontal : sur mobile, c'est le geste attendu. */
+  let swipeX = 0, swipeY = 0;
+  lightbox.addEventListener("touchstart", (e) => {
+    swipeX = e.changedTouches[0].clientX;
+    swipeY = e.changedTouches[0].clientY;
+  }, { passive: true });
+  lightbox.addEventListener("touchend", (e) => {
+    const dx = e.changedTouches[0].clientX - swipeX;
+    const dy = e.changedTouches[0].clientY - swipeY;
+    if (Math.abs(dx) > 55 && Math.abs(dx) > Math.abs(dy)) openLb(lbIndex + (dx < 0 ? 1 : -1));
+  }, { passive: true });
 
   /* ---------- [5] Plans : bascule avant / après du 6e ---------- */
 

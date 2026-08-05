@@ -29,7 +29,7 @@
   <link rel="preload" href="assets/fonts/Manrope-400.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" as="image" type="image/webp" imagesrcset="assets/img/orsay-1200.webp 1200w, assets/img/orsay-2400.webp 2400w" imagesizes="100vw" fetchpriority="high">
   <link rel="stylesheet" href="assets/fonts/fonts.css?v=17">
-  <link rel="stylesheet" href="css/main.css?v=25">
+  <link rel="stylesheet" href="css/main.css?v=27">
   <noscript><style>.reveal{opacity:1;transform:none}.hero__content>*{opacity:1;transform:none}.opener__frame{transform:none;border-radius:0}</style></noscript>
   <script type="application/ld+json">
   {
@@ -104,7 +104,7 @@
     <a class="btn btn--dark nav__cta" href="#contact">Organiser une visite</a>
   </header>
 
-  <div class="sticky-cta" id="stickyCta" aria-hidden="true">
+  <div class="sticky-cta" id="stickyCta" inert>
     <div class="sticky-cta__inner">
       <p class="sticky-cta__price">1&nbsp;995&nbsp;000&nbsp;€<span>42, rue du Bac · Paris VII</span></p>
       <a class="btn btn--dark sticky-cta__btn" href="#contact">Organiser une visite</a>
@@ -212,7 +212,7 @@
         </header>
         <div class="fiche__scenarios reveal">
           <p><strong>Réunir</strong>&nbsp;— une seule adresse familiale sur les deux derniers étages.</p>
-          <p><strong>Diviser</strong>&nbsp;— jusqu'à 4 studios locatifs&nbsp;: les lots 11 et 12 au 5ᵉ, 153 et 154 au 6ᵉ existent déjà (relevé géomètre-expert, juillet 2026).</p>
+          <p><strong>Diviser</strong>&nbsp;— jusqu'à 4 studios locatifs&nbsp;: les lots 11 et 12 au 5ᵉ, 153 et 154 au 6ᵉ existent déjà (relevé géomètre-expert, juillet 2026). Le 6ᵉ étant classé <span class="dpe dpe--f">F</span>, sa mise en location seule suppose des travaux de rénovation énergétique.</p>
         </div>
         <div class="fiche__groups">
           <div class="fiche__group reveal">
@@ -258,7 +258,7 @@
         </div>
         <div class="fiche__prix reveal">
           <p class="fiche__prix-num">1&nbsp;995&nbsp;000&nbsp;€</p>
-          <p class="fiche__prix-note">Soit 18&nbsp;250&nbsp;€/m² au sol · Présenté par SAS YP</p>
+          <p class="fiche__prix-note">Soit 19&nbsp;650&nbsp;€/m² Carrez · 18&nbsp;250&nbsp;€/m² au sol · Présenté par SAS YP</p>
         </div>
       </div>
     </section>
@@ -273,7 +273,10 @@
         <div class="plans__grid">
           <figure class="plan reveal">
             <figcaption><strong>5ᵉ étage</strong><span>Lots 11 et 12 · situation existante</span></figcaption>
-            <img src="assets/img/plan-lots-5e.svg" alt="Plan du 5e étage redessiné d'après le relevé du géomètre : lot 11 (deux chambres, salle d'eau, dégagement) et lot 12 (séjour, cuisine, entrée), escalier commun et porte condamnée" loading="lazy" decoding="async">
+            <button type="button" class="plan__zoom" aria-label="Agrandir le plan du 5e étage">
+              <img src="assets/img/plan-lots-5e.svg" width="1400" height="1000" alt="Plan du 5e étage redessiné d'après le relevé du géomètre : lot 11 (deux chambres, salle d'eau, dégagement) et lot 12 (séjour, cuisine, entrée), escalier commun et porte condamnée" loading="lazy" decoding="async">
+            </button>
+            <p class="plan__note">64,05&nbsp;m² Carrez · les deux plans sont à la même échelle. Touchez pour agrandir.</p>
           </figure>
           <figure class="plan reveal">
             <figcaption>
@@ -283,11 +286,11 @@
                 <button type="button" id="planApres" aria-pressed="false">Après subdivision</button>
               </span>
             </figcaption>
-            <div class="plan__stack">
-              <img src="assets/img/plan-lots-6e-avant.svg" id="planImgAvant" alt="Plan du 6e étage avant modification : lot 17 unique" loading="lazy" decoding="async">
-              <img src="assets/img/plan-lots-6e-apres.svg" id="planImgApres" class="is-hidden" alt="Plan du 6e étage après modification : lots 153 (séjour et coin cuisine), 154 (pièce et salle d'eau) et 155 (lot de desserte sur le palier commun), cloisons à édifier" loading="lazy" decoding="async">
-            </div>
-            <p class="plan__note">Cloisons à édifier · modificatif de copropriété à publier.</p>
+            <button type="button" class="plan__zoom plan__stack" aria-label="Agrandir le plan du 6e étage">
+              <img src="assets/img/plan-lots-6e-avant.svg" id="planImgAvant" width="1400" height="1000" alt="Plan du 6e étage avant modification : lot 17 unique" loading="lazy" decoding="async">
+              <img src="assets/img/plan-lots-6e-apres.svg" id="planImgApres" width="1400" height="1000" class="is-hidden" alt="Plan du 6e étage après modification : lots 153 (séjour et coin cuisine), 154 (pièce et salle d'eau) et 155 (lot de desserte sur le palier commun), cloisons à édifier" loading="lazy" decoding="async">
+            </button>
+            <p class="plan__note">37,47&nbsp;m² Carrez · cloisons à édifier, modificatif de copropriété à publier. Touchez pour agrandir.</p>
           </figure>
         </div>
       </div>
@@ -367,6 +370,6 @@
     <p class="lightbox__count" id="lbCount"></p>
   </div>
 
-  <script src="js/main.js?v=25" defer></script>
+  <script src="js/main.js?v=27" defer></script>
 </body>
 </html>
