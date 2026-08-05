@@ -85,17 +85,17 @@
   // descente 0→14,4 s, cour, séjour, pièce vue, 6e, toits. [t, eyebrow, nom]
   const CAPS = [
     [0.0, "Depuis l'orbite", "La Terre"],
-    [2.6, "Europe de l'Ouest", "La France"],
-    [5.6, "Île-de-France", "Paris"],
-    [9.0, "Rive gauche", "Le 7ᵉ arrondissement"],
-    [11.6, "Saint-Thomas d'Aquin", "Rue du Bac"],
-    [14.0, "", ""],
-    [14.9, "L'immeuble", "La cour pavée"],
-    [17.9, "5ᵉ étage", "Le séjour"],
-    [20.9, "5ᵉ étage", "Fenêtre sur les toits"],
-    [23.9, "6ᵉ étage", "Sous les toits"],
-    [26.9, "La vue", "Les toits de Paris"],
-    [29.2, "", ""]
+    [2.08, "Europe de l'Ouest", "La France"],
+    [4.48, "Île-de-France", "Paris"],
+    [7.2, "Rive gauche", "Le 7ᵉ arrondissement"],
+    [9.28, "Saint-Thomas d'Aquin", "Rue du Bac"],
+    [11.2, "", ""],
+    [11.92, "L'immeuble", "La cour pavée"],
+    [14.32, "5ᵉ étage", "Le séjour"],
+    [16.72, "5ᵉ étage", "Fenêtre sur les toits"],
+    [19.12, "6ᵉ étage", "Sous les toits"],
+    [21.52, "La vue", "Les toits de Paris"],
+    [23.36, "", ""]
   ];
   let capIdx = -1;
   video.addEventListener("timeupdate", () => {
