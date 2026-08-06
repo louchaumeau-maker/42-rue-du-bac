@@ -112,12 +112,12 @@
     [7.34, "Saint-Thomas d'Aquin", "Rue du Bac"],
     [8.8, "L'immeuble", "La cour pavée"],
     [12.4, "5ᵉ étage", "Le séjour"],
-    [17.6, "5ᵉ étage", "La cuisine"],
-    [20.5, "5ᵉ étage", "La chambre"],
-    [23.2, "5ᵉ étage", "Le bureau, sur les toits"],
-    [27.3, "6ᵉ étage", "Le séjour"],
-    [30.6, "6ᵉ étage", "La chambre mansardée"],
-    [33.9, "", ""]
+    [15.9, "5ᵉ étage", "La cuisine"],
+    [18.8, "5ᵉ étage", "La chambre"],
+    [21.5, "5ᵉ étage", "Le bureau, sur les toits"],
+    [25.6, "6ᵉ étage", "Le séjour"],
+    [28.9, "6ᵉ étage", "La chambre mansardée"],
+    [32.2, "", ""]
   ];
   let capIdx = -1;
   video.addEventListener("timeupdate", () => {
