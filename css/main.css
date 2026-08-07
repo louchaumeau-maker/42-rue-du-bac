@@ -250,6 +250,38 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 500; color: var(--ink); }
 .opener__bar { position: absolute; left: 0; right: 0; bottom: 0; height: 2px; background: rgba(244, 242, 237, 0.12); }
 .opener__bar span { display: block; height: 100%; width: 0; background: #d8bc85; }
 
+/* Carton de fin : sans lui, le film se figeait sur sa dernière image et
+   le visiteur restait devant un arrêt sur image sans savoir quoi faire. */
+.opener__end {
+  position: absolute; inset: 0; z-index: 3;
+  display: grid; place-content: center; justify-items: center; gap: 0.6rem;
+  text-align: center; padding: 2rem;
+  background: rgba(10, 10, 14, 0.55);
+  backdrop-filter: blur(3px); -webkit-backdrop-filter: blur(3px);
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.9s var(--ease);
+}
+.opener__end.is-on { opacity: 1; pointer-events: auto; }
+.opener__end-eyebrow { font-size: 0.68rem; letter-spacing: 0.32em; text-transform: uppercase; color: #d8bc85; }
+.opener__end-title {
+  font-family: var(--serif); font-weight: 500; color: #f6f4ef;
+  font-size: clamp(2rem, 5vw, 3.4rem); line-height: 1.05;
+}
+.opener__end-cue {
+  margin-top: 0.8rem;
+  display: inline-flex; flex-direction: column; align-items: center; gap: 0.7rem;
+  font-size: 0.68rem; letter-spacing: 0.26em; text-transform: uppercase;
+  color: rgba(246, 244, 239, 0.82);
+  transition: color 0.3s var(--ease);
+}
+.opener__end-cue:hover { color: #d8bc85; }
+.opener__end-cue svg { animation: endCue 2.2s var(--ease) infinite; }
+@keyframes endCue {
+  0%, 100% { transform: translateY(0); opacity: 0.75; }
+  50% { transform: translateY(7px); opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) { .opener__end-cue svg { animation: none; } }
+
 /* ---------- [3] Photos ---------- */
 
 .photos { padding: clamp(4rem, 10vh, 7rem) 0 clamp(2.5rem, 6vh, 4.5rem); }

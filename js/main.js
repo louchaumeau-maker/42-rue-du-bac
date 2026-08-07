@@ -141,6 +141,25 @@
     $("#photos").scrollIntoView({ behavior: reducedMotion ? "auto" : "smooth" });
   });
 
+  /* Le film se terminait sur un arrêt sur image de la chambre du 6ᵉ : le
+     visiteur ne savait pas que c'était fini. Le carton apparaît en fondu sur
+     la dernière seconde et l'invite explicitement à poursuivre. */
+  const openerEnd = $("#openerEnd");
+  const endCue = $("#openerEndCue");
+  const FIN = 1.1; // s avant la fin
+  video.addEventListener("timeupdate", () => {
+    if (!video.duration) return;
+    openerEnd.classList.toggle("is-on", video.currentTime >= video.duration - FIN);
+  });
+  video.addEventListener("seeking", () => {
+    if (video.duration && video.currentTime < video.duration - FIN) {
+      openerEnd.classList.remove("is-on");
+    }
+  });
+  endCue.addEventListener("click", () => {
+    $("#photos").scrollIntoView({ behavior: reducedMotion ? "auto" : "smooth" });
+  });
+
   /* ---------- [3] Lightbox de la galerie ---------- */
 
   const lightbox = $("#lightbox");
