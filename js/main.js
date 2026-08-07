@@ -177,12 +177,16 @@
     /* Le plan du 6e empile deux SVG : on ouvre celui qui est affiché. */
     const img = $("img:not(.is-hidden)", el) || $("img", el);
     const isPlan = el.classList.contains("plan__zoom");
-    /* Pour un plan, la légende vit dans la figure parente, pas dans le bouton. */
+    /* Pour un plan, la légende vit dans la figure parente, pas dans le bouton.
+       Le 6ᵉ n'a pas de <span> de légende (il porte le sélecteur Avant/Après) :
+       on retombe alors sur la note sous le plan plutôt que sur rien. */
     const fig = isPlan ? el.closest(".plan") : el;
     const strong = isPlan ? $("figcaption strong", fig) : null;
-    const cap = isPlan ? $("figcaption > span:not(.plan__toggle)", fig) : $("span, figcaption", el);
-    const label = [strong && strong.textContent, cap && cap.textContent]
-      .filter(Boolean).join(" · ");
+    const cap = isPlan
+      ? $("figcaption > span:not(.plan__toggle)", fig) || $(".plan__note", fig)
+      : $("span, figcaption", el);
+    const texte = cap && cap.textContent.split("·")[0].trim();
+    const label = [strong && strong.textContent, texte].filter(Boolean).join(" · ");
     return {
       full: el.dataset.full || img.src,
       alt: img.alt,
@@ -213,7 +217,16 @@
     document.body.style.overflow = "";
     if (lastFocus) lastFocus.focus();
   };
-  shots.forEach((btn, i) => btn.addEventListener("click", () => openLb(i)));
+  shots.forEach((btn, i) => {
+    btn.addEventListener("click", () => openLb(i));
+    /* Les projections sont des <figure> : sans ça, elles s'ouvrent à la souris
+       mais restent inatteignables au clavier. */
+    if (btn.tagName === "FIGURE") {
+      btn.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openLb(i); }
+      });
+    }
+  });
   $("#lbClose").addEventListener("click", closeLb);
   $("#lbPrev").addEventListener("click", () => openLb(lbIndex - 1));
   $("#lbNext").addEventListener("click", () => openLb(lbIndex + 1));

@@ -349,6 +349,14 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 500; color: var(--ink); }
 .dpe--d { background: #d8c15a; color: #191820; }
 .dpe--a { background: var(--dpe-ab); color: #191820; }
 .dpe--f { background: #e8873c; color: #191820; }
+/* Mention obligatoire pour un logement classé F : elle doit se voir, sans
+   pour autant hurler dans une fiche qui vend le bien. */
+.fiche__alerte {
+  margin-top: 1rem; padding: 0.75rem 0.9rem;
+  border-left: 2px solid #e8873c;
+  background: rgba(232, 135, 60, 0.08);
+  font-size: 0.78rem; line-height: 1.6; color: var(--ink-soft);
+}
 .dpe--c { background: #a7b6d4; color: #191820; }
 .fiche__prix { margin-top: clamp(2.5rem, 6vh, 4rem); text-align: center; }
 .fiche__prix-num { font-family: var(--serif); font-size: clamp(2.6rem, 6vw, 4.4rem); color: var(--ink); line-height: 1; }
@@ -374,7 +382,7 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 500; color: var(--ink); }
 @media (max-width: 700px) {
   .plan__toggle button { padding: 1.35em 1.1em; } /* cible tactile ≥ 44 px */
 }
-.plan__toggle button.is-on { background: var(--accent-wash); color: var(--accent); }
+.plan__toggle button.is-on { background: var(--accent); color: #fff; }
 .plan img { width: 100%; height: auto; }
 .plan__zoom { display: block; width: 100%; padding: 0; text-align: left; }
 .plan__zoom:hover { opacity: 0.85; }
@@ -386,12 +394,6 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 500; color: var(--ink); }
 
 .projections { padding: clamp(4rem, 10vh, 7rem) 0; background: var(--paper-2); }
 
-.compare { position: relative; overflow: hidden; user-select: none; touch-action: pan-y; }
-.compare img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
-.compare__before-wrap {
-  position: absolute; inset: 0;
-  clip-path: inset(0 calc(100% - var(--cut, 50%)) 0 0);
-}
 .projections__grid {
   display: grid; grid-template-columns: repeat(2, 1fr);
   gap: clamp(1rem, 2.5vw, 2rem);
