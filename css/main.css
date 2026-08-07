@@ -109,6 +109,7 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 500; color: var(--ink); }
 .nav:not(.is-solid) .nav__links a { color: rgba(246, 244, 239, 0.88); }
 .nav:not(.is-solid) .nav__links a:hover { color: #d8bc85; }
 .nav__brand {
+  display: flex; align-items: center; min-height: 44px;
   font-family: var(--serif); font-size: 1.15rem; color: var(--ink); text-decoration: none;
   letter-spacing: 0.01em; white-space: nowrap;
 }
@@ -438,7 +439,12 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 500; color: var(--ink); }
 .contact__name { font-family: var(--serif); font-size: 1.5rem; color: var(--ink); }
 .contact__role { font-size: 0.68rem; letter-spacing: 0.26em; text-transform: uppercase; color: var(--accent); margin: 0.3rem 0 1.2rem; }
 .contact__card ul { list-style: none; }
-.contact__card li a { display: block; padding: 0.35rem 0; text-decoration: none; color: var(--ink-soft); }
+/* 44px de haut minimum : le téléphone est le premier geste d'un acquéreur
+   sur mobile, il ne doit pas se rater. */
+.contact__card li a {
+  display: flex; align-items: center; min-height: 44px;
+  padding: 0.35rem 0; text-decoration: none; color: var(--ink-soft);
+}
 .contact__card li a:hover { color: var(--accent); }
 .contact__card hr { border: 0; border-top: 1px solid var(--line); margin: 1.2rem 0; }
 .contact__agency { font-size: 0.8rem; color: var(--muted); }
